@@ -6,8 +6,8 @@ import Navbar from './components/Navbar.js'
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Navbar />
+      
+
     </div>
   );
 }
