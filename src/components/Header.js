@@ -9,6 +9,7 @@ class Header extends React.Component {
             
             <img src={Lit_League_Logo} alt="logo" className="logo_left"/>
             <span>Welcome to the Haines Little League Charter #99827</span>
+            
             <img src={Lit_League_Logo} alt="logo" className="logo_right"/>
             
         </div>
