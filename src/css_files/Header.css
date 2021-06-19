@@ -1,0 +1,25 @@
+.Header {
+    background-color: green;
+    height: 100px;
+}
+
+.logo_left {
+    width: 200px;
+    float: left;
+}
+
+.logo_right {
+    width: 200px;
+    float: right;
+    display: inline;
+    white-space: nowrap;
+}
+
+span {
+    font-size: xx-large;
+    vertical-align: center;
+    margin-top: 31px;
+    
+    display: inline-block;
+
+}
