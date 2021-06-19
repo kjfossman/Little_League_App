@@ -2,36 +2,48 @@ import React, { Component } from 'react';
 import '../css_files/Navbar.css';
 import { NavLink } from 'react-router-dom';
 
-const link = {
-    width: '100px',
-    padding: '12px',
-    margin: '0 6px 6px',
-    background: 'blue',
-    textDecoration: 'none',
-    color: 'white',
-  }
 
 class Navbar extends Component {
-
-    
-
 
     render() {
         return (
             <div>
-                <button><b>HOME</b></button>
-                <button><b>SCHEDULE/RESULTS</b></button>
-                <button><b>TEAMS</b></button>
-                <button><b>CONTACT US</b></button> 
-                <NavLink
+                 <button><NavLink 
+                    to="/home" exact
+                    activeStyle={{
+                        color: 'red'
+                    }}
+                    ><b>HOME</b>
+                </NavLink></button>  
+                <button><NavLink 
+                    to="/schedule" exact
+                    activeStyle={{
+                        color: 'red'
+                    }}
+                    ><b>SCHEDULE/RESULTS</b>
+                </NavLink></button>  
+                <button><NavLink 
+                    to="/teams" exact
+                    activeStyle={{
+                        color: 'red'
+                    }}
+                    ><b>TEAMS</b>
+                </NavLink></button>  
+                <button><NavLink 
+                    to="/contact" exact
+                    activeStyle={{
+                        color: 'red'
+                    }}
+                    ><b>CONTACT US</b>
+                </NavLink></button>  
+                <button><NavLink 
                     to="/about"
                     exact
-                    style={link}
                     activeStyle={{
-                        background: 'darkblue'
+                        color: 'red'
                     }}
-                    >About
-                </NavLink>             
+                    ><b>ABOUT</b>
+                </NavLink></button>             
             </div>
         );
     }
