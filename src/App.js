@@ -11,12 +11,12 @@ import { fetchGames } from './actions/scheduleActions.js'
 
 class App extends Component {
   componentDidMount() {
-    console.log(this.props)
     this.props.fetchGames()
+    console.log(this.props.games)
+    console.log('break')
   }
 
   render() {
-    console.log(this.props.games)
     return (
       <div className="App">
         

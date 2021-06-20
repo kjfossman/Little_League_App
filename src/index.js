@@ -21,7 +21,7 @@ ReactDOM.render((
     <Header />
     <Navbar />
     <Route exact path="/home" component={App} />
-    <Route path="/schedule" component={Navbar}/>
+    <Route path="/schedule" component={Schedule}/>
     <Route path="/teams" component={Navbar}/>
     <Route path="/contact" component={Navbar}/>
     <Route path="/about" component={Navbar}/>
