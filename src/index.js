@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './css_files/index.css';
 import App from './App';
 import Navbar from './components/Navbar.js'
+import Schedule from './components/Schedule.js'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Header from './components/Header.js'
