@@ -1,7 +1,5 @@
 
 import './css_files/App.css';
-import Header from './components/Header.js'
-import Navbar from './components/Navbar.js'
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -15,7 +13,8 @@ class App extends Component {
     this.props.fetchGames()
     this.props.fetchTeams()
     console.log(this.props.games)
-    console.log('break')
+
+    console.log(this.props.teams)
   }
 
   render() {

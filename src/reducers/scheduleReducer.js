@@ -1,20 +1,25 @@
 // add the catsReducer
-const scheduleReducer = (state = {games: []}, action) => {
+const scheduleReducer = (state = [], action) => {
+  
     switch(action.type) {
         case 'LOADING_GAMES':
-            return {
-                ...state,
-                games: [...state.games]
-            }
+            return state
+                
+        
         case 'ADD_GAMES':
-            return {
-                ...state,
-                games: action.games
-            }    
-   
+            return action.games
+            
+        // case 'ADD_GAME': 
+        //     return [...state, action.game]  
+
       default:
-        return state;
+        return state
     }
   }
   
   export default scheduleReducer; 
+
+//   return {
+//     ...state,
+//     games: action.games
+// }    

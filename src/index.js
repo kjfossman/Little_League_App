@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
   teams: teamReducer 
 })
 
-const store = createStore(scheduleReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render((
   <Provider store={store}>
