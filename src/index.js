@@ -4,13 +4,20 @@ import './css_files/index.css';
 import App from './App';
 import Navbar from './components/Navbar.js'
 import Schedule from './components/Schedule.js'
+import Team from './components/Team.js'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Header from './components/Header.js'
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import scheduleReducer from './reducers/scheduleReducer.js'
+import teamReducer from './reducers/teamReducer.js'
+
+const rootReducer = combineReducers({
+  games: scheduleReducer,
+  teams: teamReducer 
+})
 
 const store = createStore(scheduleReducer, applyMiddleware(thunk))
 
@@ -23,7 +30,7 @@ ReactDOM.render((
     <Navbar />
     <Route exact path="/home" component={App} />
     <Route path="/schedule" component={Schedule}/>
-    <Route path="/teams" component={Navbar}/>
+    <Route path="/teams" component={Team}/>
     <Route path="/contact" component={Navbar}/>
     <Route path="/about" component={Navbar}/>
   </React.StrictMode>
