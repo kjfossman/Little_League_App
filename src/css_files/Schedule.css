@@ -1,0 +1,25 @@
+.sched{
+    color: navy;
+    text-align: left;
+    margin-left: 500px;
+    
+}
+
+.teams{
+    color: green;
+    margin-top: 4px;
+}
+.team-score{
+    display: inline-block;
+    position: absolute;
+    left: 700px;
+}
+
+.score{
+    position: absolute;
+    left: 700px;
+    display: inline-block;
+    /* text-align: right; */
+    /* margin-left: 100px; */
+}
+
