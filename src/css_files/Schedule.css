@@ -1,15 +1,21 @@
 .sched{
+    background-color: lightgray;
     color: navy;
     text-align: left;
     margin-left: 500px;
+    border-style: solid;
+    margin-right: 500px;
+   
     
 }
 
 .teams{
+    background-color: white;
     color: green;
     margin-top: 4px;
 }
 .team-score{
+    background-color: white;
     display: inline-block;
     position: absolute;
     left: 700px;
@@ -21,5 +27,16 @@
     display: inline-block;
     /* text-align: right; */
     /* margin-left: 100px; */
+}
+
+.result{
+    background-color: lightgray;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: small;
+    color: navy;
+    padding-bottom: 5px;
+    
+  
 }
 
