@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 
 
 class Team extends Component {
-
+    
+    state = {
+        players: false 
+    }
 
     handleClick = (event) => {
-        console.log(event)
+        this.setState(prevState => ({
+            players: !prevState.players
+        }))
+        console.log(this.state.players)
         let testing = this.props.teams.find(team => team.name === event.target.innerText)
         console.log(testing)
     }
@@ -15,10 +21,11 @@ class Team extends Component {
 
         let teams = this.props.teams.map(team => <div onClick={this.handleClick} key={team.id}>{team.name}</div>)
      
+    
         return (
             
             <div>
-                {teams}
+                {teams} {this.state.players ? 'hayoo' : 'not'}
             </div>
         );
     }
