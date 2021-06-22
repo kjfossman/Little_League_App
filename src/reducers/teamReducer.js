@@ -1,18 +1,14 @@
 
 const initState = {teams: []}
 
-const teamReducer = (state = initState, action) => {
+const teamReducer = (state = [], action) => {
     switch(action.type) {
         case 'LOADING_TEAMS':
-            return {
-                ...state,
-                teams: [...state.teams]
-            }
+            return state
+
         case 'ADD_TEAMS':
-            return {
-                ...state,
-                teams: action.teams
-            }    
+            return action.teams
+               
    
       default:
         return state;

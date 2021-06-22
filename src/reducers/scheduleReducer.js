@@ -1,4 +1,4 @@
-// add the catsReducer
+
 const scheduleReducer = (state = [], action) => {
   
     switch(action.type) {

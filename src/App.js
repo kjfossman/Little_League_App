@@ -7,7 +7,7 @@ import { fetchGames } from './actions/scheduleActions.js'
 import { fetchTeams} from './actions/scheduleActions.js'
 
 import Navbar from './components/Navbar.js'
-import Schedule from './components/Schedule.js'
+import ScheduleContainer from './containers/ScheduleContainer.js'
 import TeamsContainer from './containers/TeamsContainer.js'
 import Players from './components/Players.js'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
@@ -31,7 +31,7 @@ class App extends Component {
             <Header />
             <Navbar />
             <Route exact path="/home" component={Navbar} />
-            <Route path="/schedule" component={Schedule}/>
+            <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
             <Route path="/contact" component={Navbar}/>
             <Route path="/about" component={Players}/>

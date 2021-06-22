@@ -23,7 +23,7 @@ class TeamsContainer extends Component {
 const mapStateToProps = state => {
     
     return {
-        teams: state.teams.teams
+        teams: state.teams
       }
 }
 export default connect(mapStateToProps)(TeamsContainer);

@@ -4,9 +4,15 @@
     text-align: left;
     margin-left: 500px;
     border-style: solid;
-    margin-right: 500px;
-   
-    
+    margin-right: 500px;  
+}
+
+.form{
+  position: absolute;
+  top: 200px;
+  right: 150px;
+  background-color: pink;
+
 }
 
 .teams{
@@ -36,7 +42,6 @@
     font-size: small;
     color: navy;
     padding-bottom: 5px;
-    
-  
 }
+
 
