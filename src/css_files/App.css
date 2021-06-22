@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: red;
+  background-image: url("https://res.cloudinary.com/little-league/image/upload/c_limit,dpr_auto,w_1536,q_auto,c_fill,g_face/v1520559951/resize-field-1.jpg")
 }
 
 .App-logo {

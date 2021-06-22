@@ -2,12 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css_files/index.css';
 import App from './App';
-import Navbar from './components/Navbar.js'
-import Schedule from './components/Schedule.js'
-import Team from './components/Team.js'
+
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import Header from './components/Header.js'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
@@ -22,21 +18,15 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render((
-  <Provider store={store}>
-  <Router>
-    <div className="index">
   <React.StrictMode>
-    <Header />
-    <Navbar />
-    <Route exact path="/home" component={App} />
-    <Route path="/schedule" component={Schedule}/>
-    <Route path="/teams" component={Team}/>
-    <Route path="/contact" component={Navbar}/>
-    <Route path="/about" component={Navbar}/>
-  </React.StrictMode>
+  <Provider store={store}>
+
+    <div className="index">
+      <App store={store}/>
     </div>
-  </Router>
-  </Provider>),
+
+  </Provider>
+  </React.StrictMode>),
   document.getElementById('root')
 );
 

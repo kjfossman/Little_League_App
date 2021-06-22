@@ -6,6 +6,13 @@ import { connect } from 'react-redux';
 import { fetchGames } from './actions/scheduleActions.js'
 import { fetchTeams} from './actions/scheduleActions.js'
 
+import Navbar from './components/Navbar.js'
+import Schedule from './components/Schedule.js'
+import Team from './components/Team.js'
+
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import Header from './components/Header.js'
+
  
 
 class App extends Component {
@@ -19,9 +26,17 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="App">
-        
+            <Header />
+            <Navbar />
+            <Route exact path="/home" component={Navbar} />
+            <Route path="/schedule" component={Schedule}/>
+            <Route path="/teams" component={Team}/>
+            <Route path="/contact" component={Navbar}/>
+            <Route path="/about" component={Navbar}/>
       </div>
+      </Router>
     );
   }
 }

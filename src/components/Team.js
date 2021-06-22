@@ -13,7 +13,7 @@ class Team extends Component {
 
     render() {
 
-        let teams = this.props.teams.map(team => <div onClick={this.handleClick}>{team.name}</div>)
+        let teams = this.props.teams.map(team => <div onClick={this.handleClick} key={team.id}>{team.name}</div>)
      
         return (
             
