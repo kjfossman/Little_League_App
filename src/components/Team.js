@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
 
 class Team extends Component {
     
@@ -12,29 +10,20 @@ class Team extends Component {
         this.setState(prevState => ({
             players: !prevState.players
         }))
-        console.log(this.state.players)
-        let testing = this.props.teams.find(team => team.name === event.target.innerText)
-        console.log(testing)
+        
+       
     }
-
-    render() {
-
-        let teams = this.props.teams.map(team => <div onClick={this.handleClick} key={team.id}>{team.name}</div>)
-     
     
+    
+    render() {
+        const playersListjsx = <ul><li>{this.props.team.players[0].name}</li></ul>
         return (
-            
-            <div>
-                {teams} {this.state.players ? 'hayoo' : 'not'}
+            <div className='card' onClick={this.handleClick} style={{backgroundColor: 'orange'}}>
+                {this.props.team.name}
+                {this.state.players ? playersListjsx : 'off'}
             </div>
         );
     }
 }
 
-const mapStateToProps = state => {
-    
-    return {
-        teams: state.teams.teams
-      }
-}
-export default connect(mapStateToProps)(Team);
+export default Team;

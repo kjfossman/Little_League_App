@@ -5,17 +5,20 @@ import App from './App';
 
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import scheduleReducer from './reducers/scheduleReducer.js'
 import teamReducer from './reducers/teamReducer.js'
+
+
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const rootReducer = combineReducers({
   games: scheduleReducer,
   teams: teamReducer 
 })
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, compose(applyMiddleware(thunk), devTools))
 
 ReactDOM.render((
   <React.StrictMode>

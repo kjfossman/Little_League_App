@@ -15,7 +15,13 @@
   }
 }
 
+.card {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  /* border-style: dashed; */
 
+}
 
 
 @keyframes App-logo-spin {

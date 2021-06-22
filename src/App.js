@@ -8,8 +8,8 @@ import { fetchTeams} from './actions/scheduleActions.js'
 
 import Navbar from './components/Navbar.js'
 import Schedule from './components/Schedule.js'
-import Team from './components/Team.js'
-
+import TeamsContainer from './containers/TeamsContainer.js'
+import Players from './components/Players.js'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Header from './components/Header.js'
 
@@ -32,9 +32,9 @@ class App extends Component {
             <Navbar />
             <Route exact path="/home" component={Navbar} />
             <Route path="/schedule" component={Schedule}/>
-            <Route path="/teams" component={Team}/>
+            <Route path="/teams" component={TeamsContainer}/>
             <Route path="/contact" component={Navbar}/>
-            <Route path="/about" component={Navbar}/>
+            <Route path="/about" component={Players}/>
       </div>
       </Router>
     );

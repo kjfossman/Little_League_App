@@ -1,5 +1,7 @@
-// add the catsReducer
-const teamReducer = (state = {teams: []}, action) => {
+
+const initState = {teams: []}
+
+const teamReducer = (state = initState, action) => {
     switch(action.type) {
         case 'LOADING_TEAMS':
             return {
