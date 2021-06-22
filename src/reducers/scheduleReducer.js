@@ -9,8 +9,8 @@ const scheduleReducer = (state = [], action) => {
         case 'ADD_GAMES':
             return action.games
             
-        // case 'ADD_GAME': 
-        //     return [...state, action.game]  
+        case 'ADD_GAME': 
+            return [...state, action.game]  
 
       default:
         return state

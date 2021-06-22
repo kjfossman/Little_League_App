@@ -25,6 +25,13 @@
             
         })
     }
-    }
+ }
+
+ export const addGame = (game) => {
+     return {
+         type: 'ADD_GAME',
+         game
+     }
+ }
 
 // dispatch({type: 'ADD_GAMES', games: responseJSON})
