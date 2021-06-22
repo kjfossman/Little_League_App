@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css_files/Team.css';
 
 class Team extends Component {
     
@@ -16,14 +17,27 @@ class Team extends Component {
     
     
     render() {
-        const playersListjsx = <ul><li>{this.props.team.players[0].name}</li></ul>
+        const playersListjsx = <ul><u>{"Players"}</u>{this.props.team.players.map(player => <li>{player.name} {player.age}</li>)}</ul>
         return (
-            <div className='card' onClick={this.handleClick} style={{backgroundColor: 'orange'}}>
-                {this.props.team.name}
-                {this.state.players ? playersListjsx : 'off'}
+         
+            <div className='card' onClick={this.handleClick} style={{backgroundColor: `var(--${this.props.team.name.split(' ')[0]}`}}>
+      
+                {`${this.props.team.name} (${this.props.team.wins} - ${this.props.team.losses})`}<br>
+                </br>{`Ages: ${this.props.team.ages}`}
+                
+             
+                <div className='player'>
+                 
+                {this.state.players ? playersListjsx : ''}
+                </div>
+               
             </div>
+      
+           
         );
     }
 }
 
 export default Team;
+
+// style={{backgroundColor: `var(--${this.props.team.name.split(' ')[0]}`}}

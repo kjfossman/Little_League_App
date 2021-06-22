@@ -1,0 +1,48 @@
+:root {
+    --San: rgb(255, 102, 0);
+    --Oakland: rgb(34, 139, 43);
+}
+
+.main {
+    width: 400px;
+    height: 400px;
+    display: inline;
+    background-color: lightpink;
+}
+
+.card {
+    position: static;
+    text-align: left;
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    border-style: solid;
+    padding: 10px;
+    margin: 10px;
+ 
+  }
+/* 
+.card:hover{
+    transform: rotateY(180deg);
+}
+
+.thefront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: pink;
+    color: black
+}
+
+.theback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: blue;
+    transform: rotateY(180deg);
+} */
+.player {
+    position: fixed;
+}
