@@ -17,7 +17,6 @@ class ScheduleInput extends Component {
     handleOnSubmit = event => {
         console.log(this.state)
         event.preventDefault();
-        
         this.props.submitGame(this.state)
       }
 
