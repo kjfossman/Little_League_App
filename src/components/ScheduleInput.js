@@ -4,11 +4,12 @@ import { addGame } from '../actions/scheduleActions';
 import '../css_files/Schedule.css';
 
 
+
 class ScheduleInput extends Component {
 
     state = {
-        home_team: 'San Francisco Giants',
-        away_team: 'San Francisco Giants',
+        home_team: '1',
+        away_team: '1',
         date: '',
         home_team_score: 0,
         away_team_score: 0
@@ -52,7 +53,7 @@ class ScheduleInput extends Component {
 
     render() {
         
-        const teamInputs = this.props.teams.map(team => <option value={team.name}>{team.name}</option>)
+        const teamInputs = this.props.teams.map(team => <option value={team.id}>{team.name}</option>)
 
         return (
             <div className='form'>
