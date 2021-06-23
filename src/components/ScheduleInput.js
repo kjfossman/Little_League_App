@@ -11,8 +11,8 @@ class ScheduleInput extends Component {
         home_team: '1',
         away_team: '1',
         date: '',
-        home_team_score: 0,
-        away_team_score: 0
+        home_team_score: '',
+        away_team_score: ''
     }
 
     handleOnSubmit = event => {
@@ -59,20 +59,21 @@ class ScheduleInput extends Component {
             <div className='form'>
                 {"Makeup Game Form"}
                 <form onSubmit={this.handleOnSubmit}>
-                    <label htmlFor='home_team'>Home Team:</label>
-                    <select onChange={this.handleonHomeTeamChange} name='home_team' id='home_team'>
-                        {teamInputs} 
-                    </select><br></br>
+                    
                     <label htmlFor='away_team'>Away Team:</label>
                     <select onChange={this.handleonAwayTeamChange} name='away_team' id='away_team'>
                         {teamInputs}
                     </select><br></br>
+                    <label htmlFor='home_team'>Home Team:</label>
+                    <select onChange={this.handleonHomeTeamChange} name='home_team' id='home_team'>
+                        {teamInputs} 
+                    </select><br></br>
                     <label htmlFor='date'>Date:</label>
-                    <input onChange={this.handleDateChange} type="datetime-local" name='date' id='date'></input><br></br>
-                    <label htmlFor='home_team_score'>Home Team Score:</label>
-                    <input onChange={this.handleHomeTeamScoreChange} type="number" min="1" max="50" name='home_team_score' id='home_team_score'></input><br></br>
+                    <input onChange={this.handleDateChange} type="datetime-local" name='date' id='date'></input><br></br>  
                     <label htmlFor='away_team_score'>Away Team Score:</label>
                     <input onChange={this.handleAwayTeamScoreChange} type="number" min="1" max="50" name='away_team_score' id='away_team_score'></input><br></br>
+                    <label htmlFor='home_team_score'>Home Team Score:</label>
+                    <input onChange={this.handleHomeTeamScoreChange} type="number" min="1" max="50" name='home_team_score' id='home_team_score'></input><br></br>
                     <input className='submit' type="submit" value="Add Game"></input>
                 </form>
             </div>

@@ -16,7 +16,6 @@ class Schedule extends Component {
         
         return (
             <div>
-                
                 {games}
             </div>
         );

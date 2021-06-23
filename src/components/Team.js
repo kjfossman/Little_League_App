@@ -23,7 +23,8 @@ class Team extends Component {
             <div className='card' onClick={this.handleClick} style={{backgroundColor: `var(--${this.props.team.name.split(' ')[0]}`}}>
       
                 {`${this.props.team.name} (${this.props.team.wins} - ${this.props.team.losses})`}<br>
-                </br>{`Ages: ${this.props.team.ages}`}
+                </br>{`Ages: ${this.props.team.ages}`}<br></br>
+                <img className='teamimg' alt='logo' src={this.props.team.img}></img>
                 
              
                 <div className='player'>

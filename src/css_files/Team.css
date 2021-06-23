@@ -46,3 +46,12 @@
 .player {
     position: fixed;
 }
+
+.teamimg {
+    
+    position: fixed;
+    height: 200px;
+    width: 175px;
+    margin-left: 220px;
+    margin-top: 160px;
+}

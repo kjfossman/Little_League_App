@@ -9,13 +9,16 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import scheduleReducer from './reducers/scheduleReducer.js'
 import teamReducer from './reducers/teamReducer.js'
+import playerReducer from './reducers/playerReducer';
+
 
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const rootReducer = combineReducers({
   games: scheduleReducer,
-  teams: teamReducer 
+  teams: teamReducer,
+  players: playerReducer
 })
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk), devTools))
