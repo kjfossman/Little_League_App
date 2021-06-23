@@ -53,25 +53,25 @@ class ScheduleInput extends Component {
 
     render() {
         
-        const teamInputs = this.props.teams.map(team => <option value={team.id}>{team.name}</option>)
+        const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
 
         return (
             <div className='form'>
                 {"Makeup Game Form"}
                 <form onSubmit={this.handleOnSubmit}>
-                    <label for='home_team'>Home Team:</label>
+                    <label htmlFor='home_team'>Home Team:</label>
                     <select onChange={this.handleonHomeTeamChange} name='home_team' id='home_team'>
                         {teamInputs} 
                     </select><br></br>
-                    <label for='away_team'>Away Team:</label>
+                    <label htmlFor='away_team'>Away Team:</label>
                     <select onChange={this.handleonAwayTeamChange} name='away_team' id='away_team'>
                         {teamInputs}
                     </select><br></br>
-                    <label for='date'>Date:</label>
+                    <label htmlFor='date'>Date:</label>
                     <input onChange={this.handleDateChange} type="datetime-local" name='date' id='date'></input><br></br>
-                    <label for='home_team_score'>Home Team Score:</label>
+                    <label htmlFor='home_team_score'>Home Team Score:</label>
                     <input onChange={this.handleHomeTeamScoreChange} type="number" min="1" max="50" name='home_team_score' id='home_team_score'></input><br></br>
-                    <label for='away_team_score'>Away Team Score:</label>
+                    <label htmlFor='away_team_score'>Away Team Score:</label>
                     <input onChange={this.handleAwayTeamScoreChange} type="number" min="1" max="50" name='away_team_score' id='away_team_score'></input><br></br>
                     <input className='submit' type="submit" value="Add Game"></input>
                 </form>

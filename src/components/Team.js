@@ -17,7 +17,7 @@ class Team extends Component {
     
     
     render() {
-        const playersListjsx = <ul><u>{"Players"}</u>{this.props.team.players.map(player => <li>{player.name} {player.age}</li>)}</ul>
+        const playersListjsx = <ul><u>{"Players"}</u>{this.props.team.players.map((player, idx) => <li key={idx}>{player.name} {player.age}</li>)}</ul>
         return (
          
             <div className='card' onClick={this.handleClick} style={{backgroundColor: `var(--${this.props.team.name.split(' ')[0]}`}}>
