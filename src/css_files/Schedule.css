@@ -7,12 +7,24 @@
     margin-right: 500px;  
 }
 
+.sched:hover {
+    color: RED;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
 .form{
+  height: 200px;
+  width: 300px;
   position: absolute;
   top: 200px;
-  right: 150px;
-  background-color: pink;
+  right: 100px;
+  background-color: lightgray;
+  border-style: solid; 
+}
 
+.submit{
+    margin: 10px;
+    color: white;
+    background-color: navy;
 }
 
 .teams{

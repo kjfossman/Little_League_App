@@ -38,7 +38,7 @@
          },
          body: JSON.stringify({
              home_team_id: parseInt(formData.home_team), 
-             away_team_id: formData.away_team,
+             away_team_id: parseInt(formData.away_team),
              date: formData.date,
              home_team_score: formData.home_team_score,
              away_team_score: formData.away_team_score
@@ -46,7 +46,6 @@
      })
      .then(result => result.json())
      .then(responseJSON => {
-         debugger
         
             dispatch({type: 'ADD_GAME', game: responseJSON})
         
