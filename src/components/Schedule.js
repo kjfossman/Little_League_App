@@ -12,7 +12,7 @@ class Schedule extends Component {
             <div key={game.id} className="sched">{Moment.parseZone(game.date).format('MMMM DD,  LT')} <div className='score'>{"SCORE"}</div>
                 <div className='teams'>{game.away_team.name}<div className='team-score'>{game.away_team_score}</div><br></br> 
                 {game.home_team.name}<div className='team-score'>{game.home_team_score}</div></div>
-                <div className='result'>{game.winner ? `Winning Team: ${game.winner}` : ''}</div></div>)
+                <div className='result'>{game.winner ? `Winning Team: ${game.winner.name}` : ''}</div></div>)
         
         return (
             <div>
