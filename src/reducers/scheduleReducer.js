@@ -14,12 +14,11 @@ const scheduleReducer = (state = [], action) => {
             
         case 'UPDATE_GAME':
             
-         
             const index = state.findIndex(game => game.id === action.game.id)
-         
+            
             return [...state.slice(0, index), 
                     {
-                        ...state[index]
+                        ...action.game
                     },
                     ...state.slice(index + 1)]
            

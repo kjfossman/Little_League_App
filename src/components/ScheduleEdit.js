@@ -18,12 +18,7 @@ class ScheduleEdit extends Component {
 
     handleOnSubmit = event => {
         
-        event.preventDefault();
-        console.log(this.state)
-        console.log(this.state.away_team)
-        console.log(this.state.home_team)
-        console.log(this.state.game_id)
-        
+        event.preventDefault();  
         this.props.editGame(this.state)
       }
 

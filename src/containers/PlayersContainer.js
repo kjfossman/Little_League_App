@@ -10,7 +10,7 @@ class PlayersContainer extends Component {
 
     render() {
 
-        let players = this.props.players.map(player => <Player key={player.id} player={player}/>)
+        let players = this.props.players.map(player => <Player key={player.id} player={player} team={player.team}/>)
 
         
         return (

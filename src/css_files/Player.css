@@ -1,3 +1,10 @@
+:root {
+  --San: rgb(255, 102, 0);
+  --Oakland: rgb(34, 139, 43);
+  --SanText: black;
+  --OaklandText: white; 
+}
+
 .flip-card {
     background-color: transparent;
     width: 300px;
@@ -36,8 +43,17 @@
   
   .flip-card-back {
     background-color: #2980b9;
-    color: white;
+    
+   
     transform: rotateY(180deg);
+  }
+
+  .flip-card-back img{
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    position: relative;
+    top: 0px;
   }
 
   .playerimg {

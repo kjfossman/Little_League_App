@@ -30,7 +30,7 @@ class Navbar extends Component {
                     ><b>TEAMS</b>
                 </NavLink></button>  
                 <button><NavLink 
-                    to="/contact" exact
+                    to="/contacts" exact
                     activeStyle={{
                         color: 'red'
                     }}

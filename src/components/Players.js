@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Players extends Component {
     render() {
-        debugger
+        
         let players = this.props.teams.players.map(player => <div>{player}</div>)
 
         return (

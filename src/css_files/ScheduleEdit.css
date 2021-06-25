@@ -1,3 +1,11 @@
 .edit {
     background-color: red;
+    height: 200px;
+  width: 300px;
+  position: fixed;
+  
+  top: 200px;
+  right: 100px;
+  z-index: 2;
+  border-style: solid; 
 }

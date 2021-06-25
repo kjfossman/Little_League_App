@@ -32,7 +32,7 @@ class App extends Component {
             <Route exact path="/home" component={Navbar} />
             <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
-            <Route path="/contact" component={Navbar}/>
+            <Route path="/contacts" component={Navbar}/>
             <Route path="/players" component={PlayersContainer}/>
       </div>
       </Router>
