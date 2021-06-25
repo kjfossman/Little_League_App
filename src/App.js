@@ -13,6 +13,7 @@ import TeamsContainer from './containers/TeamsContainer.js'
 import PlayersContainer from './containers/PlayersContainer.js'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Header from './components/Header.js'
+import PlayerForm from './components/PlayerForm';
 
  
 
@@ -32,7 +33,7 @@ class App extends Component {
             <Route exact path="/home" component={Navbar} />
             <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
-            <Route path="/contacts" component={Navbar}/>
+            <Route path="/contacts" component={PlayerForm}/>
             <Route path="/players" component={PlayersContainer}/>
       </div>
       </Router>

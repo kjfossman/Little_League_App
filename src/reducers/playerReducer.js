@@ -6,6 +6,9 @@ const playerReducer = (state = [], action) => {
 
         case 'ADD_PLAYERS':
             return action.players
+
+        case 'ADD_PLAYER':
+            return [...state, action.player]
                
    
       default:

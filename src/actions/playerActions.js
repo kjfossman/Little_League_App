@@ -11,3 +11,32 @@ export const fetchPlayers = () => {
     })
 }
 }
+
+
+
+export const addPlayer = (formData) => {
+     
+    return (dispatch) => {
+    fetch("http://localhost:3000/players",{
+        method: "POST",
+        headers: {
+           "Content-Type": "application/json",
+           
+        },
+        body: JSON.stringify({
+            
+               name: parseInt(formData.home_team), 
+               age: parseInt(formData.away_team),
+               team: formData.date
+            
+        })
+    })
+    .then(result => result.json())
+    .then(responseJSON => {
+           debugger
+           dispatch({type: 'ADD_PLAYER', player: responseJSON})
+       
+
+    })
+   }
+}
