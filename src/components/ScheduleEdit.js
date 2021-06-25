@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addGame } from '../actions/scheduleActions';
+import { updateGame } from '../actions/scheduleActions';
 import '../css_files/ScheduleEdit.css';
 import Moment from 'moment';
 
@@ -8,8 +8,8 @@ import Moment from 'moment';
 class ScheduleEdit extends Component {
 
     state = {
-        home_team: this.props.game.home_team,
-        away_team: this.props.game.away_team,
+        home_team: this.props.home_team_id,
+        away_team: this.props.away_team_id,
         date: this.props.game.date,
         home_team_score: this.props.game.home_team_score,
         away_team_score: this.props.game.away_team_score
@@ -18,7 +18,11 @@ class ScheduleEdit extends Component {
     handleOnSubmit = event => {
         
         event.preventDefault();
-        this.props.submitGame(this.state)
+        console.log(this.state)
+        console.log(this.state.home_team)
+        console.log(this.props.home_team_id)
+        
+        // this.props.submitGame(this.state)
       }
 
     handleonHomeTeamChange = event => {
@@ -64,13 +68,13 @@ class ScheduleEdit extends Component {
                     <label htmlFor='away_team'>Away Team:</label>
                     <select onChange={this.handleonAwayTeamChange} name='away_team' id='away_team'>
                         {teamInputs}
-                        <option selected value={this.state.away_team.name}>{this.state.away_team.name}</option>
+                        <option selected value={this.state.away_team}>{this.props.game.away_team.name}</option>
                         {/* <option selected='selected' value={this.state.home_team}>{this.state.home_team}</option> */}
                     </select><br></br>
                     <label htmlFor='home_team'>Home Team:</label>
                     <select onChange={this.handleonHomeTeamChange} name='home_team' id='home_team'>
                         {teamInputs} 
-                        <option selected value={this.state.home_team.name}>{this.state.home_team.name}</option>
+                        <option selected value={this.state.home_team}>{this.props.game.home_team.name}</option>
                         {/* <option selected='selected' value={this.state.away_team.id}>{this.state.away_team}</option> */}
                     </select><br></br>
                     <label htmlFor='date'>Date:</label>
@@ -90,7 +94,7 @@ class ScheduleEdit extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         submitGame: (formData) => {
-            dispatch(addGame(formData))
+            dispatch(updateGame(formData))
         }
     }
 }

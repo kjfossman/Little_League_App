@@ -19,13 +19,13 @@ class Game extends Component {
         this.setState(prevState => ({
             active: !prevState.active
         }))
-        console.log(this.props.game.home_team)
+     
       
         
     }
 
     render() {
-        const editform = <div><ScheduleEdit/></div>
+       
         return (
             <div>
              <div onClick={this.handleClick} key={this.props.game.id} className="sched">{Moment.parseZone(this.props.game.date).format('MMMM DD,  LT')} <div className='score'>{"SCORE"}</div>
@@ -37,7 +37,7 @@ class Game extends Component {
                 
                 <div>
                  
-                 {this.state.active ? <ScheduleEdit game={this.props.game}/> : ''}
+                 {this.state.active ? <ScheduleEdit game={this.props.game} home_team_id={this.props.game.home_team_id} away_team_id={this.props.game.away_team_id}/> : ''}
                  </div>   
                 
                 
