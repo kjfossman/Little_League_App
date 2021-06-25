@@ -1,0 +1,102 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addGame } from '../actions/scheduleActions';
+import '../css_files/ScheduleEdit.css';
+
+
+
+class ScheduleEdit extends Component {
+
+    state = {
+        home_team: this.props.game.home_team,
+        away_team: this.props.game.away_team,
+        date: this.props.game.date,
+        home_team_score: this.props.game.home_team_score,
+        away_team_score: this.props.game.away_team_score
+    }
+
+    handleOnSubmit = event => {
+        
+        event.preventDefault();
+        this.props.submitGame(this.state)
+      }
+
+    handleonHomeTeamChange = event => {
+        
+        this.setState({
+            home_team: event.target.value
+        })
+    }
+
+    handleonAwayTeamChange = event => {
+        this.setState({
+            away_team: event.target.value
+        })
+    }
+
+    handleDateChange = event => {
+        this.setState({
+            date: event.target.value
+        })
+    }
+
+    handleHomeTeamScoreChange = event => {
+        this.setState({
+            home_team_score: event.target.value
+        })
+    }
+
+    handleAwayTeamScoreChange = event => {
+        this.setState({
+            away_team_score: event.target.value
+        })
+    }
+
+    render() {
+        
+        const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
+
+        return (
+            <div className='edit'>
+                {"Update Game"}
+                <form onSubmit={this.handleOnSubmit}>
+                    
+                    <label htmlFor='away_team'>Away Team:</label>
+                    <select onChange={this.handleonAwayTeamChange} name='away_team' id='away_team' value={this.state.away_team}>
+                        {teamInputs}
+                    </select><br></br>
+                    <label htmlFor='home_team'>Home Team:</label>
+                    <select onChange={this.handleonHomeTeamChange} name='home_team' id='home_team'>
+                        {teamInputs} 
+                    </select><br></br>
+                    <label htmlFor='date'>Date:</label>
+                    <input onChange={this.handleDateChange} type="datetime-local" name='date' id='date'></input><br></br>  
+                    <label htmlFor='away_team_score'>Away Team Score:</label>
+                    <input onChange={this.handleAwayTeamScoreChange} type="number" min="1" max="50" name='away_team_score' id='away_team_score' value={this.state.away_team_score}></input><br></br>
+                    <label htmlFor='home_team_score'>Home Team Score:</label>
+                    <input onChange={this.handleHomeTeamScoreChange} type="number" min="1" max="50" name='home_team_score' id='home_team_score' value={this.state.home_team_score}></input><br></br>
+                    <input className='submit' type="submit" value="Update Game"></input>
+                </form>
+            </div>
+        );
+    }
+}
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        submitGame: (formData) => {
+            dispatch(addGame(formData))
+        }
+    }
+}
+
+const mapStateToProps = state => {
+    
+    return {
+        games: state.games, 
+        teams: state.teams
+      }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ScheduleEdit);
+
