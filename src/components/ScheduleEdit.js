@@ -24,7 +24,7 @@ class ScheduleEdit extends Component {
         console.log(this.state.home_team)
         console.log(this.state.game_id)
         
-        // this.props.editGame(this.state)
+        this.props.editGame(this.state)
       }
 
     handleonHomeTeamChange = event => {

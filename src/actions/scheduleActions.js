@@ -49,8 +49,8 @@
  export const updateGame = (formData) => {
      
     return (dispatch) => {
-    fetch("http://localhost:3000/games",{
-        method: "POST",
+    fetch(`http://localhost:3000/games/${formData.game_id}`,{
+        method: "PATCH",
         headers: {
            "Content-Type": "application/json",
            
@@ -68,8 +68,8 @@
     })
     .then(result => result.json())
     .then(responseJSON => {
-           debugger
-           dispatch({type: 'ADD_GAME', game: responseJSON})
+        
+           dispatch({type: 'UPDATE_GAME', game: responseJSON})
        
 
     })

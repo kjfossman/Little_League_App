@@ -15,8 +15,7 @@ class ScheduleInput extends Component {
         away_team_score: ''
     }
 
-    handleOnSubmit = event => {
-        
+    handleOnSubmit = event => {  
         event.preventDefault();
         this.props.submitGame(this.state)
       }
