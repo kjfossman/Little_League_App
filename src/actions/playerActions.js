@@ -15,7 +15,7 @@ export const fetchPlayers = () => {
 
 
 export const addPlayer = (formData) => {
-     
+     debugger
     return (dispatch) => {
     fetch("http://localhost:3000/players",{
         method: "POST",
@@ -25,9 +25,9 @@ export const addPlayer = (formData) => {
         },
         body: JSON.stringify({
             
-               name: parseInt(formData.home_team), 
-               age: parseInt(formData.away_team),
-               team: formData.date
+               name: formData.name, 
+               age: parseInt(formData.age),
+               team_id: parseInt(formData.team)
             
         })
     })

@@ -5,9 +5,9 @@ import { addPlayer } from '../actions/playerActions.js'
 class PlayerForm extends Component {
 
     state = {
-        player_name: '',
-        player_age: '',
-        player_team_id: ''
+        name: '',
+        age: '',
+        team: ''
     }
 
     handleOnSubmit = event => {  
@@ -15,22 +15,10 @@ class PlayerForm extends Component {
         this.props.submitPlayer(this.state)
       }
 
-    handleNameChange = event => {
+    handleChange = event => {
         this.setState({
-           player_name: event.target.value
-        })
-    }
-
-    handleAgeChange = event => {
-        this.setState({
-            player_age: event.target.value
-        })
-    }
-
-    handleTeamChange = event => {
-        this.setState({
-            player_team_id: event.target.value
-        })
+            [event.target.name]: event.target.value
+        }, (state) => {console.log(this.state)})
     }
 
     render() {
@@ -42,13 +30,14 @@ class PlayerForm extends Component {
                 <form onSubmit={this.handleOnSubmit}>
                     
                     <label htmlFor='player_name'>Player Name:</label>
-                    <input onChange={this.handleNameChange} type="text" name="name" id="name"></input>
+                    <input onChange={this.handleChange} type="text" name="name" id="name"></input>
                     
               
                     <label htmlFor='age'>Age:</label>
-                    <input onChange={this.handleAgeChange} type="number" min="7" max="14" name='age' id='age'></input><br></br>  
+                    <input onChange={this.handleChange} type="number" min="7" max="14" name='age' id='age'></input><br></br>  
                     <label htmlFor='team'>Team:</label>
-                    <select onChange={this.handleTeamChange} name='team' id='team'>
+                    <select onChange={this.handleChange} name='team' id='team'>
+                        <option key="default">Please Select Team</option>
                     {teamInputs}
                     </select><br></br>
                     
