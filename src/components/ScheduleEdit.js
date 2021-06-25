@@ -12,17 +12,19 @@ class ScheduleEdit extends Component {
         away_team: this.props.away_team_id,
         date: this.props.game.date,
         home_team_score: this.props.game.home_team_score,
-        away_team_score: this.props.game.away_team_score
+        away_team_score: this.props.game.away_team_score,
+        game_id: this.props.game.id
     }
 
     handleOnSubmit = event => {
         
         event.preventDefault();
         console.log(this.state)
+        console.log(this.state.away_team)
         console.log(this.state.home_team)
-        console.log(this.props.home_team_id)
+        console.log(this.state.game_id)
         
-        // this.props.submitGame(this.state)
+        // this.props.editGame(this.state)
       }
 
     handleonHomeTeamChange = event => {
@@ -57,7 +59,7 @@ class ScheduleEdit extends Component {
     }
 
     render() {
-        debugger
+       
         const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
 
         return (
@@ -93,7 +95,7 @@ class ScheduleEdit extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        submitGame: (formData) => {
+        editGame: (formData) => {
             dispatch(updateGame(formData))
         }
     }

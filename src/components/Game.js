@@ -37,7 +37,7 @@ class Game extends Component {
                 
                 <div>
                  
-                 {this.state.active ? <ScheduleEdit game={this.props.game} home_team_id={this.props.game.home_team_id} away_team_id={this.props.game.away_team_id}/> : ''}
+                 {this.state.active ? <ScheduleEdit game={this.props.game} home_team_id={this.props.game.home_team_id} away_team_id={this.props.game.away_team_id} game_id={this.props.game.id}/> : ''}
                  </div>   
                 
                 
