@@ -16,6 +16,7 @@ import AnnouncementsContainer from './containers/AnnouncementsContainer';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Header from './components/Header.js'
 import PlayerForm from './components/PlayerForm';
+import { withRouter } from 'react-router-dom';
 
  
 
@@ -36,7 +37,9 @@ class App extends Component {
             <Route exact path="/home" component={AnnouncementsContainer} />
             <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
-            <Route path="/contacts" component={PlayerForm}/>
+            <Route path="/player" component={(routeInfo) => {
+              console.log(routeInfo)
+              return <PlayerForm goBack={() => routeInfo.history.push("/players")} />}}/>
             <Route path="/players" component={PlayersContainer}/>
       </div>
       </Router>

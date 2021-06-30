@@ -28,14 +28,7 @@ class Navbar extends Component {
                         color: 'red'
                     }}
                     ><b>TEAMS</b>
-                </NavLink></button>  
-                <button><NavLink 
-                    to="/contacts" exact
-                    activeStyle={{
-                        color: 'red'
-                    }}
-                    ><b>CONTACT US</b>
-                </NavLink></button>  
+                </NavLink></button> 
                 <button><NavLink 
                     to="/players"
                     exact
@@ -43,7 +36,15 @@ class Navbar extends Component {
                         color: 'red'
                     }}
                     ><b>PLAYERS</b>
-                </NavLink></button>             
+                </NavLink></button>     
+                <button><NavLink 
+                    to="/player" exact
+                    activeStyle={{
+                        color: 'red'
+                    }}
+                    ><b>ADD PLAYER</b>
+                </NavLink></button>  
+                         
             </div>
         );
     }

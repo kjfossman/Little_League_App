@@ -13,6 +13,7 @@ class PlayerForm extends Component {
     handleOnSubmit = event => {  
         event.preventDefault();
         this.props.submitPlayer(this.state)
+        this.props.goBack()
       }
 
     handleChange = event => {

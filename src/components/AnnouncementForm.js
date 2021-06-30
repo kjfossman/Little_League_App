@@ -38,7 +38,7 @@ class AnnouncementForm extends Component {
                     <label htmlFor='content'>Content:</label>
                     <textarea onChange={this.handleChange} type="text" name='content' id='content' value={this.state.content}></textarea><br></br>  
                     </div>
-                    <input className='submit' type="submit" value="Post"></input>
+                    <input className='submit' type="submit" value="Post Announcement"></input>
                 </form>
             </div>
         );
