@@ -6,3 +6,36 @@
     text-align: left;
     padding: 5px;
 }
+
+.block {
+    margin-left: 750px;
+    background-color: white;
+    width: 500px;
+    border-style: solid;
+    position: fixed;
+    top: 136px
+
+}
+
+.subject-form{
+    text-align: left;
+    padding-bottom: 10px;
+    padding-top: 5px
+}
+
+.content-form{
+    text-align: left;
+}
+.content-form label {
+    margin-right: 50px;
+}
+
+.content-form textarea{
+    width: 450px;
+    height: 75px;
+    padding-left: 10px;
+    color: white;
+    background-color: navy;
+    word-break: break-word;
+    word-wrap: break-word;
+}
