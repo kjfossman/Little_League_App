@@ -17,7 +17,7 @@ class AnnouncementForm extends Component {
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
-        }, (state) => {console.log(this.state)})
+       })
     }
 
     render() {

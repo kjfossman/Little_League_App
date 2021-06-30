@@ -6,8 +6,8 @@ const announcementReducer = (state = [], action) => {
         case 'ADD_ANNOUNCEMENTS':
             return action.announcements
 
-        // case 'ADD_ANNOUNCEMENT':
-        //     return [...state, action.player]
+        case 'ADD_ANNOUNCEMENT':
+            return [...state, action.announcement]
                
    
       default:

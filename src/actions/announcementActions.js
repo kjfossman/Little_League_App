@@ -12,6 +12,27 @@ export const fetchAnnouncements = () => {
 }
 }
 
-export const addAnnouncement = () => {
+export const addAnnouncement = (formData) => {
+    return (dispatch) => {
+    fetch("http://localhost:3000/announcements",{
+        method: "POST",
+        headers: {
+           "Content-Type": "application/json",
+           
+        },
+        body: JSON.stringify({
+            
+               subject: formData.subject, 
+               content: formData.content,
+        })
+    })
+    .then(result => result.json())
+    .then(responseJSON => {
+           dispatch({type: 'ADD_ANNOUNCEMENT', announcement: responseJSON})
+       
+ 
+    })
+   }
+ }
     
-}
+
