@@ -6,11 +6,13 @@ import { connect } from 'react-redux';
 import { fetchGames } from './actions/scheduleActions.js'
 import { fetchTeams} from './actions/teamActions.js'
 import { fetchPlayers} from './actions/playerActions.js'
+import { fetchAnnouncements } from './actions/announcementActions';
 
 import Navbar from './components/Navbar.js'
 import ScheduleContainer from './containers/ScheduleContainer.js'
 import TeamsContainer from './containers/TeamsContainer.js'
 import PlayersContainer from './containers/PlayersContainer.js'
+import AnnouncementsContainer from './containers/AnnouncementsContainer';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Header from './components/Header.js'
 import PlayerForm from './components/PlayerForm';
@@ -22,6 +24,7 @@ class App extends Component {
     this.props.fetchGames()
     this.props.fetchTeams()
     this.props.fetchPlayers()
+    this.props.fetchAnnouncements()
   }
 
   render() {
@@ -30,7 +33,7 @@ class App extends Component {
       <div className="App">
             <Header />
             <Navbar />
-            <Route exact path="/home" component={Navbar} />
+            <Route exact path="/home" component={AnnouncementsContainer} />
             <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
             <Route path="/contacts" component={PlayerForm}/>
@@ -52,7 +55,8 @@ const mapDispatchToProps = dispatch => {
   return {
   fetchGames: () => dispatch(fetchGames()),
   fetchTeams: () => dispatch(fetchTeams()),
-  fetchPlayers: () => dispatch(fetchPlayers())
+  fetchPlayers: () => dispatch(fetchPlayers()),
+  fetchAnnouncements: () => dispatch(fetchAnnouncements())
   }
 }
 

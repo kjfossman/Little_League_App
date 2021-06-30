@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css_files/Player.css';
 
 class Player extends Component {
-    debugger
+  
     render() {
         return (
             <div className="flip-card">
