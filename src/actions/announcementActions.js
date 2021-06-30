@@ -11,3 +11,7 @@ export const fetchAnnouncements = () => {
     })
 }
 }
+
+export const addAnnouncement = () => {
+    
+}
