@@ -9,7 +9,7 @@ class TeamsContainer extends Component {
     render() {
 
         let teams = this.props.teams.map(team => <Team key={team.id} team={team}/> )
-     
+        console.log(teams)
     
         return (
             

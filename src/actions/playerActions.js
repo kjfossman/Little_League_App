@@ -15,7 +15,6 @@ export const fetchPlayers = () => {
 
 
 export const addPlayer = (formData) => {
-     debugger
     return (dispatch) => {
     fetch("http://localhost:3000/players",{
         method: "POST",
@@ -33,8 +32,8 @@ export const addPlayer = (formData) => {
     })
     .then(result => result.json())
     .then(responseJSON => {
-           debugger
            dispatch({type: 'ADD_PLAYER', player: responseJSON})
+        //    dispatch({type: 'ADD_PLAYER_TO_TEAM', player: responseJSON})
        
 
     })

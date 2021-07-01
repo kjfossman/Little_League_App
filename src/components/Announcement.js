@@ -19,7 +19,7 @@ class Announcement extends Component {
 
     render() {
         return (
-            <div onClick={this.props.onClick} key={this.props.announcement.id} className="box">
+            <div onClick={this.props.onClick} id={this.props.announcement.id} key={this.props.announcement.id} className="box">
                 <div>
                 {"DATE: "}
                 {Moment(this.props.announcement.updated_at).format('MMMM DD,  LT')}
