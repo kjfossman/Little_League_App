@@ -4,14 +4,29 @@ import Announcement from '../components/Announcement.js'
 import AnnouncementForm from '../components/AnnouncementForm.js';
 
 class AnnouncementsContainer extends Component {
+
+    state = {
+        active: false
+    }
+
+    test = () => {
+        this.setState(prevState => ({
+            active: !prevState.active,
+        }))
+        console.log("I was clicked")
+    }
+
     render() {
 
-        let announcements = this.props.announcements.map(a => <Announcement key={a.id} announcement={a} />)
+        let announcements = this.props.announcements.map(a => <div onClick={this.test} key={a.id}><Announcement  key={a.id} announcement={a} /></div>)
         
         return (
             <div>
                 {announcements}
-                <AnnouncementForm />
+                <div>
+                    {this.state.active ? <AnnouncementForm /> : ''}
+                </div>
+            
             </div>
         );
     }

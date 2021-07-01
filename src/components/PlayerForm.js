@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addPlayer } from '../actions/playerActions.js'
+import { addPlayer } from '../actions/playerActions.js';
+import '../css_files/Player.css';
 
 class PlayerForm extends Component {
 
@@ -9,6 +10,10 @@ class PlayerForm extends Component {
         age: '',
         team: ''
     }
+
+   
+
+    
 
     handleOnSubmit = event => {  
         event.preventDefault();
@@ -23,16 +28,18 @@ class PlayerForm extends Component {
     }
 
     render() {
+    
         
         const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
 
         return (
-            <div>
+            <div className="player-form">
+                
                 <form onSubmit={this.handleOnSubmit}>
-                    
+                    <div>
                     <label htmlFor='player_name'>Player Name:</label>
                     <input onChange={this.handleChange} type="text" name="name" id="name"></input>
-                    
+                    </div>
               
                     <label htmlFor='age'>Age:</label>
                     <input onChange={this.handleChange} type="number" min="7" max="14" name='age' id='age'></input><br></br>  

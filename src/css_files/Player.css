@@ -61,4 +61,12 @@
     height: 300px;
   }
 
+  .player-form{
+    background-color: white;
+    width: 300px;
+    margin: auto;
+    border-style: solid;
+    text-align: left;
+  }
+
   

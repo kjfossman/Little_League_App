@@ -7,7 +7,7 @@ const announcementReducer = (state = [], action) => {
             return action.announcements
 
         case 'ADD_ANNOUNCEMENT':
-            return [...state, action.announcement]
+            return [action.announcement, ...state]
                
    
       default:

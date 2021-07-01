@@ -1,21 +1,39 @@
 import React, { Component } from 'react';
 import '../css_files/Announcement.css';
 import Moment from 'moment';
+import AnnouncementForm from './AnnouncementForm';
+
+
 
 class Announcement extends Component {
 
+    state = {
+        active: false 
+    }
+
+    handleClick = () => {
+        this.setState(prevState => ({
+            active: !prevState.active,
+        }))
+    }
+
     render() {
         return (
-            <div className="box">
+            <div onClick={this.handleClick}className="box">
                 <div>
-                {Moment.parseZone(this.props.announcement.updated_at).format('MMMM DD,  LT')}
+                {"DATE: "}
+                {Moment(this.props.announcement.updated_at).format('MMMM DD,  LT')}
                 </div>
                 <div>
-                {this.props.announcement.subject}
+                <u><strong>{"SUBJECT: "}{this.props.announcement.subject}</strong></u>
                 
                 </div>
                 
-                {this.props.announcement.content}
+                <em>{this.props.announcement.content}</em>
+                
+                {/* <div>
+                    {this.state.active ? <AnnouncementForm /> : ''}
+                </div> */}
             </div>
         );
     }
