@@ -15,7 +15,6 @@ class Game extends Component {
     }
 
     handleClick = (event) => {
-    
         this.setState(prevState => ({
             active: !prevState.active
         }))

@@ -11,7 +11,7 @@ class Announcement extends Component {
         active: false 
     }
 
-    handleClick = () => {
+    handleClick = (e) => {
         this.setState(prevState => ({
             active: !prevState.active,
         }))
@@ -19,7 +19,7 @@ class Announcement extends Component {
 
     render() {
         return (
-            <div onClick={this.handleClick}className="box">
+            <div onClick={this.props.onClick} key={this.props.announcement.id} className="box">
                 <div>
                 {"DATE: "}
                 {Moment(this.props.announcement.updated_at).format('MMMM DD,  LT')}

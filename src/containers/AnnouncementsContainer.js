@@ -1,30 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Announcement from '../components/Announcement.js'
+import AnnouncementEdit from '../components/AnnouncementEdit.js';
 import AnnouncementForm from '../components/AnnouncementForm.js';
 
 class AnnouncementsContainer extends Component {
 
     state = {
-        active: false
+        active: false,
+        object: ''
     }
 
-    test = () => {
+    test = (a) => {
+        const ann = this.props.announcements.find(x => x.id == a.currentTarget.id)
         this.setState(prevState => ({
             active: !prevState.active,
+            object: ann
         }))
-        console.log("I was clicked")
+   
     }
 
     render() {
-
-        let announcements = this.props.announcements.map(a => <div onClick={this.test} key={a.id}><Announcement  key={a.id} announcement={a} /></div>)
+        console.log(this.state.object)
+        let announcements = this.props.announcements.map(a => <div id={a.id} onClick={this.test}><Announcement  key={a.id} id={a.id} announcement={a} /></div>)
         
         return (
             <div>
                 {announcements}
                 <div>
-                    {this.state.active ? <AnnouncementForm /> : ''}
+                    {this.state.active ? <AnnouncementEdit announcement={this.state.object}/> : <AnnouncementForm />}
                 </div>
             
             </div>

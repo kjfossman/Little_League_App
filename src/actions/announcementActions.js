@@ -35,4 +35,27 @@ export const addAnnouncement = (formData) => {
    }
  }
     
+ export const updateAnnouncement = (formData) => {
+    return (dispatch) => {
+    fetch(`http://localhost:3000/announcements/${formData.id}`,{
+        method: "PATCH",
+        headers: {
+           "Content-Type": "application/json",
+           
+        },
+        body: JSON.stringify({
+            
+            subject: formData.subject, 
+            content: formData.content,
+        })
+    })
+    .then(result => result.json())
+    .then(responseJSON => {
+     
+           dispatch({type: 'UPDATE_ANNOUNCEMENT', announcement: responseJSON})
+       
+
+    })
+   }
+}
 
