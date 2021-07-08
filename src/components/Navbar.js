@@ -44,6 +44,14 @@ class Navbar extends Component {
                     }}
                     ><b>ADD PLAYER</b>
                 </NavLink></button>  
+                <button><NavLink 
+                    to="/contacts" exact
+                    activeStyle={{
+                        color: 'red'
+                    }}
+                    ><b>CONTACT</b>
+                </NavLink></button> 
+                
                          
             </div>
         );

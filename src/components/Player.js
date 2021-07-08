@@ -2,9 +2,20 @@ import React, { Component } from 'react';
 import '../css_files/Player.css';
 
 class Player extends Component {
+
+    state = {
+        button: 0
+    }
+
+    handleClick = () => {
+        this.setState(prevState => ({
+            button: prevState.button + 1
+        }))
+    }
   
     render() {
         return (
+            
             <div className="flip-card">
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -17,7 +28,11 @@ class Player extends Component {
                         <img src={this.props.team.img} alt="logo"></img>
                     </div>
                 </div>
+                {/* <div>
+                    <button onClick={this.handleClick}>{this.state.button}</button>
+                </div> */}
             </div>
+         
         );
     }
 }

@@ -38,8 +38,8 @@ class App extends Component {
             <Route exact path="/home" component={AnnouncementsContainer} />
             <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
+            <Route path="/contacts" />
             <Route path="/player" component={(routeInfo) => {
-              console.log(routeInfo)
               return <PlayerForm goBack={() => routeInfo.history.push("/players")} />}}/>
             <Route path="/players" component={PlayersContainer}/>
       </div>
