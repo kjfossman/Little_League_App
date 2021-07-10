@@ -7,16 +7,19 @@ import { fetchGames } from './actions/scheduleActions.js'
 import { fetchTeams} from './actions/teamActions.js'
 import { fetchPlayers} from './actions/playerActions.js'
 import { fetchAnnouncements } from './actions/announcementActions';
-
+import { fetchContacts } from './actions/contactActions';
 import Navbar from './components/Navbar.js'
 import ScheduleContainer from './containers/ScheduleContainer.js'
 import TeamsContainer from './containers/TeamsContainer.js'
 import PlayersContainer from './containers/PlayersContainer.js'
+import ContactsContainer from './containers/ContactsContainer';
 import AnnouncementsContainer from './containers/AnnouncementsContainer';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Header from './components/Header.js'
 import PlayerForm from './components/PlayerForm';
 import { withRouter } from 'react-router-dom';
+
+
 
 
  
@@ -27,6 +30,7 @@ class App extends Component {
     this.props.fetchTeams()
     this.props.fetchPlayers()
     this.props.fetchAnnouncements()
+    this.props.fetchContacts()
   }
 
   render() {
@@ -38,7 +42,7 @@ class App extends Component {
             <Route exact path="/home" component={AnnouncementsContainer} />
             <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
-            <Route path="/contacts" />
+            <Route path="/contacts" component={ContactsContainer}/>
             <Route path="/player" component={(routeInfo) => {
               return <PlayerForm goBack={() => routeInfo.history.push("/players")} />}}/>
             <Route path="/players" component={PlayersContainer}/>
@@ -60,7 +64,8 @@ const mapDispatchToProps = dispatch => {
   fetchGames: () => dispatch(fetchGames()),
   fetchTeams: () => dispatch(fetchTeams()),
   fetchPlayers: () => dispatch(fetchPlayers()),
-  fetchAnnouncements: () => dispatch(fetchAnnouncements())
+  fetchAnnouncements: () => dispatch(fetchAnnouncements()),
+  fetchContacts: () => dispatch(fetchContacts())
   }
 }
 

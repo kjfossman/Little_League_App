@@ -6,7 +6,6 @@
         {
             return response.json()
         }).then(responseJSON => {
-            console.log(responseJSON)
             dispatch({type: 'ADD_GAMES', games: responseJSON})  
         })
     }

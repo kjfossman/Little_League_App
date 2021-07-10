@@ -11,6 +11,7 @@ import scheduleReducer from './reducers/scheduleReducer.js'
 import teamReducer from './reducers/teamReducer.js'
 import playerReducer from './reducers/playerReducer';
 import announcmentReducer from './reducers/announcementReducer'
+import contactReducer from './reducers/contactReducer';
 
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   teams: teamReducer,
   players: playerReducer,
   announcements: announcmentReducer,
+  contacts: contactReducer
 })
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk), devTools))
