@@ -7,7 +7,6 @@ export const fetchContacts = () => {
         return response.json()
     }).then(responseJSON => {
         dispatch({type: 'ADD_CONTACTS', contacts: responseJSON})
-        
     })
 }
 }

@@ -6,9 +6,10 @@ class ContactsContainer extends Component {
 
     
     render() {
+        
         return (
             <div>
-                {this.props.contacts}
+                {this.props.contacts[0].name}
             </div>
         );
     }
