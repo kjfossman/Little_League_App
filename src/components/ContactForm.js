@@ -24,18 +24,27 @@ class ContactForm extends Component {
         return (
             <div>
                 <form className="contact-form" onSubmit={this.handleOnSubmit}>
+                    <div className="label">
                     <label htmlFor='contact_name'>Contact Name:</label>
                     <input onChange={this.handleChange} type="text" name="name" id="name"></input>
+                    </div>
 
+                    <div className="label">
                     <label htmlFor='contact_title'>Contact Title:</label>
                     <input onChange={this.handleChange} type="text" name="title" id="title"></input>
+                    </div>
 
+                    <div className="label">
                     <label htmlFor='contact_phone'>Contact Phone:</label>
                     <input onChange={this.handleChange} type="text" name="phone" id="phone"></input>
+                    </div>
 
+                    <div className="label">
                     <label htmlFor='contact_email'>Contact Email:</label>
                     <input onChange={this.handleChange} type="text" name="email" id="email"></input>
+                    </div>
 
+                    <input className='submit' type="submit" value="Add Contact"></input>
 
                 </form>
             </div>

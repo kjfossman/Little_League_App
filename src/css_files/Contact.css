@@ -15,12 +15,17 @@
 }
 
 .contact-form{
-    background-color: white;
-    width: 300px;
+    background-color: gray;
+    width: 275px;
     margin: auto;
     border-style: solid;
     text-align: left;
     left: 50px;
-    top: 200px;
+    top: 150px;
     position: absolute;
   }
+
+.label{
+    float: right;
+    padding: 1px;
+}
