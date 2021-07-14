@@ -1,5 +1,9 @@
-.main {
-    display: inline-block;
+.container {
+   margin-left: 400px;
+}
+
+.each {
+    
     border-style: solid;
     background-color: white;
     text-align: center;
@@ -7,6 +11,7 @@
     height: 65px;
     padding-top: 10px;
     margin: 2px;
+    float: left;
 }
 
 .contact-form{
@@ -15,4 +20,7 @@
     margin: auto;
     border-style: solid;
     text-align: left;
+    left: 50px;
+    top: 200px;
+    position: absolute;
   }
