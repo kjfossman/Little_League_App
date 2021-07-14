@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Contact from '../components/Contact';
+import ContactForm from '../components/ContactForm';
+
 
 
 class ContactsContainer extends Component {
@@ -13,6 +15,7 @@ class ContactsContainer extends Component {
         return (
             <div>
                 {contacts}
+                <ContactForm/>
             </div>
         );
     }
