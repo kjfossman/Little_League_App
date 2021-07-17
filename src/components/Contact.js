@@ -8,7 +8,7 @@ class Contact extends Component {
     handleClick = () => {
         console.log("here I am")
         console.log(this.props)
-        this.props.removeContact(this.state)
+        this.props.removeContact(this.props.id)
     }
     
     render() {

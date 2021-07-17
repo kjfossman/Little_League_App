@@ -40,3 +40,24 @@ export const addContact = (formData) => {
     })
    }
 }
+
+
+export const deleteContact = (id) => {
+     
+    return (dispatch) => {
+    fetch(`http://localhost:3000/contacts/${id}`,{
+        method: "DELETE",
+        headers: {
+           "Content-Type": "application/json",
+           
+        },
+    })
+    .then(result => result.json())
+    .then(responseJSON => {
+           
+           dispatch({type: 'DELETE_CONTACT', contact: responseJSON})
+       
+
+    })
+   }
+}

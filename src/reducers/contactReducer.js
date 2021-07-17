@@ -9,6 +9,9 @@ const contactReducer = (state = [], action) => {
 
         case 'ADD_CONTACT':
             return [...state, action.contact]
+
+        case 'DELETE_CONTACT':
+            return [action.contact]
    
       default:
         return state;
