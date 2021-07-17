@@ -10,3 +10,33 @@ export const fetchContacts = () => {
     })
 }
 }
+
+
+export const addContact = (formData) => {
+     
+    return (dispatch) => {
+    fetch("http://localhost:3000/contacts",{
+        method: "POST",
+        headers: {
+           "Content-Type": "application/json",
+           
+        },
+        body: JSON.stringify({
+            
+               name: formData.name, 
+               title: formData.title,
+               phone: formData.phone,
+               email: formData.email,
+           
+         
+        })
+    })
+    .then(result => result.json())
+    .then(responseJSON => {
+           
+           dispatch({type: 'ADD_CONTACT', contact: responseJSON})
+       
+
+    })
+   }
+}

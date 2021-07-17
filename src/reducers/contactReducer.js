@@ -7,8 +7,8 @@ const contactReducer = (state = [], action) => {
             // debugger 
             return action.contacts
 
-        // case 'ADD_CONTACT':
-        //     return [action.announcement, ...state]
+        case 'ADD_CONTACT':
+            return [...state, action.contact]
    
       default:
         return state;

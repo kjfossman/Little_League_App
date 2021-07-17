@@ -35,7 +35,7 @@
      })
      .then(result => result.json())
      .then(responseJSON => {
-            debugger
+            
             dispatch({type: 'ADD_GAME', game: responseJSON})
         
 

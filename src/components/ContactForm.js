@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addContact } from '../actions/contactActions';
+
 import '../css_files/Contact.css';
 
 class ContactForm extends Component {
@@ -75,7 +77,7 @@ class ContactForm extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         submitContact: (formData) => {
-            dispatch(addGContact(formData))
+            dispatch(addContact(formData))
         }
     }
 }
