@@ -8,6 +8,7 @@ class Contact extends Component {
                 {this.props.name} - {this.props.title}<br></br>
                 {this.props.phone}<br></br>
                 <a href={`mailto:${this.props.email}`}>email</a><br></br>
+                <button>REMOVE CONTACT</button>
                 </div>
                 
             </div>
