@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { deleteContact } from '../actions/contactActions';
+
 import '../css_files/Contact.css';
 class Contact extends Component {
+    
+    handleClick = () => {
+        console.log("here I am")
+        console.log(this.props)
+        this.props.removeContact(this.state)
+    }
+    
     render() {
         return (
             <div className="main">
@@ -8,7 +18,7 @@ class Contact extends Component {
                 {this.props.name} - {this.props.title}<br></br>
                 {this.props.phone}<br></br>
                 <a href={`mailto:${this.props.email}`}>email</a><br></br>
-                <button>REMOVE CONTACT</button>
+                <button onClick={this.handleClick}>REMOVE CONTACT</button>
                 </div>
                 
             </div>
@@ -16,4 +26,21 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+const mapDispatchToProps = dispatch => {
+    return {
+        removeContact: (formData) => {
+            dispatch(deleteContact(formData))
+        }
+    }
+}
+
+const mapStateToProps = state => {
+    
+    return {
+        contacts: state.contacts, 
+      }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);
+

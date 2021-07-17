@@ -10,7 +10,7 @@ class ContactsContainer extends Component {
     
     render() {
 
-        let contacts = this.props.contacts.map(contact => <Contact key={contact.id} name={contact.name} phone={contact.phone} email={contact.email} title={contact.title}/>)
+        let contacts = this.props.contacts.map(contact => <Contact key={contact.id} name={contact.name} phone={contact.phone} email={contact.email} title={contact.title} id={contact.id}/>)
         console.log(this.props)
         return (
             <div>

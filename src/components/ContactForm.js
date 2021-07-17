@@ -52,23 +52,6 @@ class ContactForm extends Component {
 
                 </form>
             </div>
-
-                    // <form onSubmit={this.handleOnSubmit}>
-                    // <div>
-                    // <label htmlFor='player_name'>Player Name:</label>
-                    // <input onChange={this.handleChange} type="text" name="name" id="name"></input>
-                    // </div>
-
-                    // <label htmlFor='age'>Age:</label>
-                    // <input onChange={this.handleChange} type="number" min="7" max="14" name='age' id='age'></input><br></br>  
-                    // <label htmlFor='team'>Team:</label>
-                    // <select onChange={this.handleChange} name='team' id='team'>
-                    //     <option key="default">Please Select Team</option>
-                    // {teamInputs}
-                    // </select><br></br>
-
-                    // <input className='submit' type="submit" value="Add Player"></input>
-                    // </form>
         );
     }
 }
