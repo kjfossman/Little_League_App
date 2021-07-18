@@ -6,8 +6,6 @@ import '../css_files/Contact.css';
 class Contact extends Component {
     
     handleClick = () => {
-        console.log("here I am")
-        console.log(this.props)
         this.props.removeContact(this.props.id)
     }
 

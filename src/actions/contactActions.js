@@ -56,7 +56,7 @@ export const deleteContact = (id) => {
     // .then(result => result.json())
     .then(responseJSON => {
            
-           dispatch({type: 'DELETE_CONTACT', contact: responseJSON})
+           dispatch({type: 'DELETE_CONTACT', contact: id})
        
 
     })

@@ -8,13 +8,14 @@ const contactReducer = (state = [], action) => {
             return action.contacts
 
         case 'ADD_CONTACT':
+            
             return [...state, action.contact]
 
         case 'DELETE_CONTACT':
-        debugger
-            const index = state.findIndex(c => c.id === action.contact.id)
 
-            return [...state.splice(index, 1)]
+            const index = state.findIndex(c => c.id === action.contact)
+            state.splice(index, 1)
+            return [...state]
    
       default:
         return state;
