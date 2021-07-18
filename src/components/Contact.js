@@ -10,6 +10,10 @@ class Contact extends Component {
         console.log(this.props)
         this.props.removeContact(this.props.id)
     }
+
+    // componentDidMount(){
+    //     this.props.removeContact(this.props.id)
+    // }
     
     render() {
         return (
