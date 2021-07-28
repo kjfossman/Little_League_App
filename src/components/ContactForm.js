@@ -16,12 +16,19 @@ class ContactForm extends Component {
     handleOnSubmit = event => {  
         event.preventDefault();
         this.props.submitContact(this.state)
+        this.setState({
+            name: '',
+            title: '',
+            phone: '',
+            email: ''
+        })
+        console.log(this.state)
       }
 
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
-        }, (state) => {console.log(this.state)})
+        })
     }
 
     render() {
@@ -30,22 +37,22 @@ class ContactForm extends Component {
                 <form className="contact-form" onSubmit={this.handleOnSubmit}>
                     <div className="label">
                     <label htmlFor='contact_name'>Contact Name:</label>
-                    <input onChange={this.handleChange} type="text" name="name" id="name"></input>
+                    <input onChange={this.handleChange} type="text" name="name" id="name" value={this.state.name}></input>
                     </div>
 
                     <div className="label">
                     <label htmlFor='contact_title'>Contact Title:</label>
-                    <input onChange={this.handleChange} type="text" name="title" id="title"></input>
+                    <input onChange={this.handleChange} type="text" name="title" id="title" value={this.state.title}></input>
                     </div>
 
                     <div className="label">
                     <label htmlFor='contact_phone'>Contact Phone:</label>
-                    <input onChange={this.handleChange} type="text" name="phone" id="phone"></input>
+                    <input onChange={this.handleChange} type="text" name="phone" id="phone" value={this.state.phone}></input>
                     </div>
 
                     <div className="label">
                     <label htmlFor='contact_email'>Contact Email:</label>
-                    <input onChange={this.handleChange} type="text" name="email" id="email"></input>
+                    <input onChange={this.handleChange} type="text" name="email" id="email" value={this.state.email}></input>
                     </div>
 
                     <input className='submit' type="submit" value="Add Contact"></input>
