@@ -4,7 +4,7 @@ import '../css_files/Team.css';
 class Team extends Component {
     
     state = {
-        players: false 
+        players: true 
     }
 
     handleClick = (event) => {

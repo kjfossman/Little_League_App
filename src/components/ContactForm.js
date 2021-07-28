@@ -41,17 +41,17 @@ class ContactForm extends Component {
                     </div>
 
                     <div className="label">
-                    <label htmlFor='contact_title'>Contact Title:</label>
+                    <label htmlFor='contact_title'>Title:</label>
                     <input onChange={this.handleChange} type="text" name="title" id="title" value={this.state.title}></input>
                     </div>
 
                     <div className="label">
-                    <label htmlFor='contact_phone'>Contact Phone:</label>
+                    <label htmlFor='contact_phone'>Phone:</label>
                     <input onChange={this.handleChange} type="text" name="phone" id="phone" value={this.state.phone}></input>
                     </div>
 
                     <div className="label">
-                    <label htmlFor='contact_email'>Contact Email:</label>
+                    <label htmlFor='contact_email'>Email:</label>
                     <input onChange={this.handleChange} type="text" name="email" id="email" value={this.state.email}></input>
                     </div>
 

@@ -28,12 +28,9 @@ class Announcement extends Component {
                 <u><strong>{"SUBJECT: "}{this.props.announcement.subject}</strong></u>
                 
                 </div>
-                
+                <div className="textbox">
                 <em>{this.props.announcement.content}</em>
-                
-                {/* <div>
-                    {this.state.active ? <AnnouncementForm /> : ''}
-                </div> */}
+                </div>
             </div>
         );
     }
