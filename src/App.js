@@ -14,10 +14,11 @@ import TeamsContainer from './containers/TeamsContainer.js'
 import PlayersContainer from './containers/PlayersContainer.js'
 import ContactsContainer from './containers/ContactsContainer';
 import AnnouncementsContainer from './containers/AnnouncementsContainer';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import Header from './components/Header.js'
 import PlayerForm from './components/PlayerForm';
 import { withRouter } from 'react-router-dom';
+import Directory from './components/Directory';
 
 
 
@@ -35,10 +36,15 @@ class App extends Component {
 
   render() {
     return (
+
       <Router>
+        <div>
+          <Route exact path="/directory" component={Directory}/>
+        </div>
       <div className="App">
             <Header />
             <Navbar />
+            
             <Route exact path="/home" component={AnnouncementsContainer} />
             <Route path="/schedule" component={ScheduleContainer}/>
             <Route path="/teams" component={TeamsContainer}/>
