@@ -18,8 +18,8 @@ class Directory extends Component {
                 <button>Continue As Guest</button>
                 </NavLink>
             </div>
-            
-            <div>
+
+            <div onClick={this.props.login}>
                 <button>Continue As Admin</button>
             </div>
             </div>

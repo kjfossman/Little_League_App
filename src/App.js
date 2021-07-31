@@ -36,6 +36,7 @@ class App extends Component {
 
   state = {
     active: true,
+    admin: false
   }
 
   change = () => {
@@ -44,21 +45,15 @@ class App extends Component {
   }))
   }
 
+  login = () => {
+    this.setState(prevState => ({
+      admin: !prevState.admin,
+    }))
+  }
+
   render() {
-
-    if (this.state.active)
-    return (
-      <Router>
-        <div>
-          <Route exact path="/directory" 
-          render={(routeInfo) => (
-          <Directory onClick={this.change}/>
-          )}/>
-        </div>
-      </Router>
-    )
-    else 
-
+   
+    if (this.state.admin)
     return (
       <Router>
       <div className="App">
@@ -74,7 +69,18 @@ class App extends Component {
             <Route path="/players" component={PlayersContainer}/>
       </div>
       </Router>
-    );
+    )
+    else if (this.state.active)
+    return (
+      <Router>
+        <div>
+          <Route exact path="/directory" 
+           render={(routeInfo) => (
+          <Directory onClick={this.change} routeinfo={routeInfo} login={this.login}/>
+          )}/>
+        </div>
+      </Router>
+    )
   }
 }
 
