@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { NavLink } from 'react-router-dom';
 class Directory extends Component {
 
     // handleClick = () => {
@@ -9,8 +9,19 @@ class Directory extends Component {
     render() {
    
         return (
+            <div>
             <div onClick={this.props.onClick}>
-                <button>Switch</button>
+            <NavLink 
+                    to="/home" exact
+                      >
+                
+                <button>Continue As Guest</button>
+                </NavLink>
+            </div>
+            
+            <div>
+                <button>Continue As Admin</button>
+            </div>
             </div>
         );
     }

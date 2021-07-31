@@ -51,7 +51,7 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/directory" 
-          render={(props) => (
+          render={(routeInfo) => (
           <Directory onClick={this.change}/>
           )}/>
         </div>
