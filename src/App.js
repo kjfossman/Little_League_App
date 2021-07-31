@@ -38,6 +38,12 @@ class App extends Component {
     active: true,
   }
 
+  change = () => {
+    this.setState(prevState => ({
+      active: !prevState.active,
+  }))
+  }
+
   render() {
 
     if (this.state.active)
@@ -46,7 +52,7 @@ class App extends Component {
         <div>
           <Route exact path="/directory" 
           render={(props) => (
-          <Directory active={this.state.active}/>
+          <Directory onClick={this.change}/>
           )}/>
         </div>
       </Router>

@@ -22,7 +22,7 @@ class AnnouncementsContainer extends Component {
 
     render() {
         console.log(this.state.object)
-        let announcements = this.props.announcements.map(a => <Announcement   onClick={this.test} key={a.id} id={a.id} announcement={a} />)
+        let announcements = this.props.announcements.map(a => <Announcement  onClick={this.test} key={a.id} id={a.id} announcement={a} />)
         
         return (
             <div>
