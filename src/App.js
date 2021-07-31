@@ -34,13 +34,27 @@ class App extends Component {
     this.props.fetchContacts()
   }
 
-  render() {
-    return (
+  state = {
+    active: true,
+  }
 
+  render() {
+
+    if (this.state.active)
+    return (
       <Router>
         <div>
-          <Route exact path="/directory" component={Directory}/>
+          <Route exact path="/directory" 
+          render={(props) => (
+          <Directory active={this.state.active}/>
+          )}/>
         </div>
+      </Router>
+    )
+    else 
+
+    return (
+      <Router>
       <div className="App">
             <Header />
             <Navbar />
