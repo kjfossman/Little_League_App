@@ -9,6 +9,7 @@ import { fetchPlayers} from './actions/playerActions.js'
 import { fetchAnnouncements } from './actions/announcementActions';
 import { fetchContacts } from './actions/contactActions';
 import Navbar from './components/Navbar.js'
+import Login from './components/Login';
 import ScheduleContainer from './containers/ScheduleContainer.js'
 import TeamsContainer from './containers/TeamsContainer.js'
 import PlayersContainer from './containers/PlayersContainer.js'
@@ -36,7 +37,8 @@ class App extends Component {
 
   state = {
     active: true,
-    admin: false
+    admin: false,
+    loggedin: false
   }
 
   change = () => {
@@ -54,6 +56,14 @@ class App extends Component {
   render() {
    
     if (this.state.admin)
+    return (
+      <Router>
+        <div>
+          <Route exact path="/login" component={Login}/>
+        </div>
+      </Router>
+    )
+    else if (this.state.loggedin)
     return (
       <Router>
       <div className="App">

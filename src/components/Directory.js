@@ -19,8 +19,13 @@ class Directory extends Component {
                 </NavLink>
             </div>
 
-            <div onClick={this.props.login}>
-                <button>Continue As Admin</button>
+            <div >
+            <NavLink 
+                    to="/login" exact
+                      >
+                
+                <button onClick={this.props.login}>Continue As Admin</button>
+                </NavLink>
             </div>
             </div>
         );
