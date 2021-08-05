@@ -17,7 +17,7 @@
 //     .catch(error => console.log('api errors:', error))
 //   };
 
-  export const loginStatus = () => {
+  export const fetchloginStatus = (data) => {
     return (dispatch) => {
         dispatch({ type: 'LOGIN_STATUS'})
 
@@ -25,8 +25,11 @@
     {
         return response.json()
     }).then(responseJSON => {
-        dispatch({type: 'CHANGE_STATUS', logged_in: responseJSON})
+        debugger
+        dispatch({type: 'CHANGE_STATUS', logged_in: data})
         
     })
 }
 }
+
+

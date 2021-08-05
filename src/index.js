@@ -12,6 +12,7 @@ import teamReducer from './reducers/teamReducer.js'
 import playerReducer from './reducers/playerReducer';
 import announcmentReducer from './reducers/announcementReducer'
 import contactReducer from './reducers/contactReducer';
+import loginReducer from './reducers/loginReducer';
 
 
 

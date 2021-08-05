@@ -21,7 +21,7 @@ import Header from './components/Header.js'
 import PlayerForm from './components/PlayerForm';
 import { withRouter } from 'react-router-dom';
 import Directory from './components/Directory';
-import { loginStatus } from './actions/loginStatusActions';
+import { fetchloginStatus } from './actions/loginStatusActions';
 
 
 
@@ -34,7 +34,7 @@ class App extends Component {
     this.props.fetchPlayers()
     this.props.fetchAnnouncements()
     this.props.fetchContacts()
-    this.props.loginStatus()
+    this.props.fetchloginStatus()
   }
   
 
@@ -73,14 +73,15 @@ class App extends Component {
   }
 
   render() {
-    debugger
+    console.log(this.props.loginStatus)
+    console.log(this.props.games)
     if (this.state.admin && !this.state.isLoggedIn)
     return (
       <Router>
         <div>
           <Route exact path="/login" 
           render={(props) => (
-            <Login info={props} handleLogin={this.handleLogin}/>)}/>
+            <Login info={props} handleLogin={this.handleLogin} fetchloginStatus={this.props.fetchloginStatus}/>)}/>
         </div>
       </Router>
     )
@@ -119,7 +120,8 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     games: state.games,
-    teams: state.teams
+    teams: state.teams,
+    loginStatus: state.loginStatus
   }
 }
 
@@ -130,7 +132,7 @@ const mapDispatchToProps = dispatch => {
   fetchPlayers: () => dispatch(fetchPlayers()),
   fetchAnnouncements: () => dispatch(fetchAnnouncements()),
   fetchContacts: () => dispatch(fetchContacts()),
-  loginStatus: () => dispatch(loginStatus())
+  fetchloginStatus: () => dispatch(fetchloginStatus())
   }
 }
 
