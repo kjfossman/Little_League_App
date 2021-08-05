@@ -21,7 +21,7 @@ import Header from './components/Header.js'
 import PlayerForm from './components/PlayerForm';
 import { withRouter } from 'react-router-dom';
 import Directory from './components/Directory';
-
+import { loginStatus } from './actions/loginStatusActions';
 
 
 
@@ -34,21 +34,9 @@ class App extends Component {
     this.props.fetchPlayers()
     this.props.fetchAnnouncements()
     this.props.fetchContacts()
-    this.loginStatus
+    this.props.loginStatus()
   }
   
-  loginStatus = () => {
-    axios.get('http://localhost:3001/logged_in', 
-   {withCredentials: true})    
-    .then(response => {
-      if (response.data.logged_in) {
-        this.handleLogin(response)
-      } else {
-        this.handleLogout()
-      }
-    })
-    .catch(error => console.log('api errors:', error))
-  };
 
   state = {
     active: false,
@@ -85,8 +73,8 @@ class App extends Component {
   }
 
   render() {
-   console.log(this.state.isLoggedIn)
-    if (this.state.admin)
+    
+    if (this.state.admin && !this.state.isLoggedIn)
     return (
       <Router>
         <div>
@@ -96,7 +84,8 @@ class App extends Component {
         </div>
       </Router>
     )
-    else if (this.state.active)
+    
+    else if (!this.state.isLoggedIn && this.state.active)
     return (
       <Router>
       <div className="App">
@@ -141,6 +130,7 @@ const mapDispatchToProps = dispatch => {
   fetchPlayers: () => dispatch(fetchPlayers()),
   fetchAnnouncements: () => dispatch(fetchAnnouncements()),
   fetchContacts: () => dispatch(fetchContacts()),
+  loginStatus: () => dispatch(loginStatus())
   }
 }
 
