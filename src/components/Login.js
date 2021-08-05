@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 class Login extends Component {
 
+    state = {
+        username: '',
+        password: '',
+        errors: ''
+    }
+
     handleOnSubmit = event => {  
         event.preventDefault();
         console.log('logged in?!?!')
@@ -14,6 +20,7 @@ class Login extends Component {
     }
 
     render() {
+        const {username, password} = this.state
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
