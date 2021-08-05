@@ -2,6 +2,7 @@
 import './css_files/App.css';
 
 import React, { Component } from 'react';
+import axios from 'axios'
 import { connect } from 'react-redux';
 import { fetchGames } from './actions/scheduleActions.js'
 import { fetchTeams} from './actions/teamActions.js'
@@ -33,12 +34,42 @@ class App extends Component {
     this.props.fetchPlayers()
     this.props.fetchAnnouncements()
     this.props.fetchContacts()
+    this.loginStatus
   }
+  
+  loginStatus = () => {
+    axios.get('http://localhost:3001/logged_in', 
+   {withCredentials: true})    
+    .then(response => {
+      if (response.data.logged_in) {
+        this.handleLogin(response)
+      } else {
+        this.handleLogout()
+      }
+    })
+    .catch(error => console.log('api errors:', error))
+  };
 
   state = {
-    active: true,
+    active: false,
     admin: false,
-    loggedin: false
+    loggedin: false,
+    isLogeedIn: false,
+    user: {}
+  }
+
+  handleLogin = (data) => {
+    this.setState({
+      isLoggedIn: true,
+      user: data.user
+    })
+  }
+
+  handleLogout = () => {
+    this.setState({
+      isLogeedIn: false, 
+      user: {}
+    })
   }
 
   change = () => {
@@ -63,7 +94,7 @@ class App extends Component {
         </div>
       </Router>
     )
-    else if (this.state.loggedin)
+    else if (this.state.active)
     return (
       <Router>
       <div className="App">
@@ -80,7 +111,7 @@ class App extends Component {
       </div>
       </Router>
     )
-    else if (this.state.active)
+    else if (!this.state.active)
     return (
       <Router>
         <div>
@@ -107,7 +138,7 @@ const mapDispatchToProps = dispatch => {
   fetchTeams: () => dispatch(fetchTeams()),
   fetchPlayers: () => dispatch(fetchPlayers()),
   fetchAnnouncements: () => dispatch(fetchAnnouncements()),
-  fetchContacts: () => dispatch(fetchContacts())
+  fetchContacts: () => dispatch(fetchContacts()),
   }
 }
 

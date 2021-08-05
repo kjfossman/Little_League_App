@@ -21,7 +21,8 @@ const rootReducer = combineReducers({
   teams: teamReducer,
   players: playerReducer,
   announcements: announcmentReducer,
-  contacts: contactReducer
+  contacts: contactReducer,
+  
 })
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk), devTools))
