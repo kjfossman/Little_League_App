@@ -73,7 +73,7 @@ class App extends Component {
   }
 
   render() {
-    
+    debugger
     if (this.state.admin && !this.state.isLoggedIn)
     return (
       <Router>
