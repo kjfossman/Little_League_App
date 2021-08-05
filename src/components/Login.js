@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 class Login extends Component {
 
 constructor(props){
@@ -28,8 +29,10 @@ constructor(props){
     }})
        
             .then(response => {
+                
             if (response.data.logged_in) {
                 this.props.handleLogin(response.data)
+                console.log('made it?')
                 this.redirect()
             } else {
                 this.setState({
@@ -39,21 +42,23 @@ constructor(props){
             })
             .catch(error => console.log('api errors:', error))
         };
-        redirect = () => {
-            this.props.history.push('/')
-        }
-        handleErrors = () => {
-            return (
-            <div>
-                <ul>
-                {this.state.errors.map(error => {
-                return <li key={error}>{error}</li>
-                })}
-                </ul>
-            </div>
-            )
-            
-        };
+
+    redirect = () => {
+        this.props.info.history.push('/home')
+    }
+
+    handleErrors = () => {
+        return (
+        <div>
+            <ul>
+            {this.state.errors.map(error => {
+            return <li key={error}>{error}</li>
+            })}
+            </ul>
+        </div>
+        )
+        
+    };
             
     
     handleChange = event => {
@@ -64,8 +69,8 @@ constructor(props){
 
     render() {
         const {username, password} = this.state
-        console.log(this.props.handleLogin)
-        console.log(this.state)
+        // console.log(this.props)
+       
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
@@ -79,6 +84,9 @@ constructor(props){
                     </div>
                     <input className='submit' type="submit" value="Login"></input>
                 </form>
+                <div>
+                    {this.state.errors}
+                </div>
             </div>
         );
     }

@@ -54,7 +54,7 @@ class App extends Component {
     active: false,
     admin: false,
     loggedin: false,
-    isLogeedIn: false,
+    isLoggedIn: false,
     user: {}
   }
 
@@ -85,12 +85,14 @@ class App extends Component {
   }
 
   render() {
-   
+   console.log(this.state.isLoggedIn)
     if (this.state.admin)
     return (
       <Router>
         <div>
-          <Route exact path="/login" component={Login}/>
+          <Route exact path="/login" 
+          render={(props) => (
+            <Login info={props} handleLogin={this.handleLogin}/>)}/>
         </div>
       </Router>
     )
