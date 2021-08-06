@@ -17,6 +17,45 @@ import axios from "axios";
     .catch(error => console.log('api errors:', error))
   }};
 
+
+  export const logout = () => {
+    debugger
+      return (dispatch) => {
+        
+      
+          axios.post('http://localhost:3000/logout', {},
+    
+          {withCredentials: true, origin: 'http://localhost:3001'})
+          
+          .then(response => {
+              
+              response 
+          })
+      }}
+  
+
+
+         
+
+//   axios.post('http://localhost:3000/login', {user}, {
+//     withCredentials: true, origin: 'http://localhost:3001'}
+//     // headers: {'Access-Control-Allow-Origin': 'http://localhost:3001', 'Content-Type': 'application/json'
+// )
+
+//     .then(response => {
+        
+//     if (response.data.logged_in) {
+//         this.props.handleLogin(response.data)
+//         this.props.fetchloginStatus()
+//         this.redirect()
+//     } else {
+//         this.setState({
+//         errors: response.data.errors
+//         })
+//     }
+//     })
+//     .catch(error => console.log('api errors:', error))
+// };
 //   export const fetchloginStatus = () => {
       
 //     return (dispatch) => {

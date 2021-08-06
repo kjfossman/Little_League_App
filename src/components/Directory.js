@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { logout } from '../actions/loginStatusActions';
+
+
 class Directory extends Component {
 
-    // handleClick = () => {
-    //     this.props.active = false
-    // }
+  
 
     render() {
    
@@ -27,10 +29,20 @@ class Directory extends Component {
                 <button onClick={this.props.login}>Continue As Admin</button>
                 </NavLink>
             </div>
-            <div><button>Logout</button></div>
+            <div>
+                <button onClick={() => console.log('hey')}>Logout</button>
+            </div>
             </div>
         );
     }
 }
 
-export default Directory;
+const mapDispatchToProps = dispatch => {
+    return {
+    clearSession: () => dispatch(logout())
+    }
+  }
+
+
+
+export default connect(null, mapDispatchToProps)(Directory);
