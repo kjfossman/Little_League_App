@@ -74,7 +74,6 @@ class App extends Component {
 
   render() {
     console.log(this.props.loginStatus)
-    console.log(this.props.games)
     if (this.state.admin && !this.state.isLoggedIn)
     return (
       <Router>
@@ -86,7 +85,7 @@ class App extends Component {
       </Router>
     )
     
-    else if (!this.state.isLoggedIn && this.state.active)
+    else if (this.state.isLoggedIn || this.state.active)
     return (
       <Router>
       <div className="App">
@@ -118,6 +117,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
+  
   return {
     games: state.games,
     teams: state.teams,

@@ -27,6 +27,7 @@ class Directory extends Component {
                 <button onClick={this.props.login}>Continue As Admin</button>
                 </NavLink>
             </div>
+            <div><button>Logout</button></div>
             </div>
         );
     }

@@ -24,15 +24,15 @@ constructor(props){
         
 
         axios.post('http://localhost:3000/login', {user}, {
-            withCredentials: false, 
-            headers: {'Access-Control-Allow-Origin': 'http://localhost:3001', 'Content-Type': 'application/json'
-    }})
+            withCredentials: true, origin: 'http://localhost:3001'}
+            // headers: {'Access-Control-Allow-Origin': 'http://localhost:3001', 'Content-Type': 'application/json'
+    )
        
             .then(response => {
                 
             if (response.data.logged_in) {
                 this.props.handleLogin(response.data)
-                this.props.fetchloginStatus(response.data.logged_in)
+                this.props.fetchloginStatus()
                 this.redirect()
             } else {
                 this.setState({
