@@ -31,9 +31,8 @@ constructor(props){
             .then(response => {
                 
             if (response.data.logged_in) {
-                debugger
                 this.props.handleLogin(response.data)
-                this.props.fetchloginStatus()
+                this.props.fetchloginStatus(response.data.logged_in)
                 this.redirect()
             } else {
                 this.setState({

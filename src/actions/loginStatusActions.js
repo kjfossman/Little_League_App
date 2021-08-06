@@ -18,6 +18,7 @@
 //   };
 
   export const fetchloginStatus = (data) => {
+      
     return (dispatch) => {
         dispatch({ type: 'LOGIN_STATUS'})
 
@@ -25,7 +26,7 @@
     {
         return response.json()
     }).then(responseJSON => {
-        debugger
+        
         dispatch({type: 'CHANGE_STATUS', logged_in: data})
         
     })

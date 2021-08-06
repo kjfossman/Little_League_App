@@ -5,8 +5,14 @@ const loginReducer = (state = [], action) => {
             return state
 
         case 'CHANGE_STATUS':
-            debugger
-            return action.logged_in
+            
+            if (action.logged_in){
+                return action.logged_in
+            }
+            else{
+                return state
+            }
+            
 
       default:
         return state;
