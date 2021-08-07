@@ -1,6 +1,7 @@
 import axios from "axios";
 
   export const fetchloginStatus = () => {
+      
       return (dispatch) => {
     axios.get('http://localhost:3000/logged_in', 
    {withCredentials: true})    
@@ -19,7 +20,7 @@ import axios from "axios";
 
 
   export const logout = () => {
-    debugger
+    
       return (dispatch) => {
         
       
@@ -28,8 +29,9 @@ import axios from "axios";
           {withCredentials: true, origin: 'http://localhost:3001'})
           
           .then(response => {
+              debugger
+            dispatch({type: 'LOGOUT', logged_out: response.data.logged_out})
               
-              response 
           })
       }}
   

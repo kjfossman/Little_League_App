@@ -6,11 +6,15 @@ const loginReducer = (state = [], action) => {
 
         case 'CHANGE_STATUS':
             
-            if (action.logged_in){
-                return action.logged_in
+            return action.logged_in
+
+        case 'LOGOUT':
+            debugger
+            if(action.logged_out === true){
+                return false
             }
             else{
-                return state
+                return state 
             }
             
 

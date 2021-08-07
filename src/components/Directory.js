@@ -30,7 +30,7 @@ class Directory extends Component {
                 </NavLink>
             </div>
             <div>
-                <button onClick={() => console.log('hey')}>Logout</button>
+                <button onClick={() => this.props.clearSession()}>Logout</button>
             </div>
             </div>
         );
