@@ -14,13 +14,26 @@ class Contact extends Component {
     // }
     
     render() {
+        if(this.props.loginStatus){
+            return (
+                <div className="main">
+                    <div className="each">
+                    {this.props.name} - {this.props.title}<br></br>
+                    {this.props.phone}<br></br>
+                    <a href={`mailto:${this.props.email}`}>email</a><br></br>
+                    <button onClick={this.handleClick}>REMOVE CONTACT</button>
+                    </div>
+                    
+                </div>
+            )
+        }
         return (
             <div className="main">
                 <div className="each">
                 {this.props.name} - {this.props.title}<br></br>
                 {this.props.phone}<br></br>
                 <a href={`mailto:${this.props.email}`}>email</a><br></br>
-                <button onClick={this.handleClick}>REMOVE CONTACT</button>
+                {/* <button onClick={this.handleClick}>REMOVE CONTACT</button> */}
                 </div>
                 
             </div>
@@ -40,6 +53,7 @@ const mapStateToProps = state => {
     
     return {
         contacts: state.contacts, 
+        loginStatus: state.loginStatus
       }
 }
 

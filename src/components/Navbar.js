@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import '../css_files/Navbar.css';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
 class Navbar extends Component {
+    
 
     render() {
         return (
@@ -36,14 +38,15 @@ class Navbar extends Component {
                         color: 'red'
                     }}
                     ><b>PLAYERS</b>
-                </NavLink></button>     
-                <button><NavLink 
+                </NavLink></button> 
+               {this.props.loginStatus &&
+                 <button><NavLink 
                     to="/player" exact
                     activeStyle={{
                         color: 'red'
                     }}
                     ><b>ADD PLAYER</b>
-                </NavLink></button>  
+                </NavLink></button> }  
                 <button><NavLink 
                     to="/contacts" exact
                     activeStyle={{
@@ -58,4 +61,11 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+    
+    return {
+        loginStatus: state.loginStatus
+      }
+}
+
+export default connect(mapStateToProps)(Navbar);

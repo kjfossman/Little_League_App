@@ -12,12 +12,21 @@ class ContactsContainer extends Component {
 
         let contacts = this.props.contacts.map(contact => <Contact key={contact.id} name={contact.name} phone={contact.phone} email={contact.email} title={contact.title} id={contact.id}/>)
         console.log(this.props)
+        if(this.props.loginStatus){
+            return (
+                <div>
+                    <div className="container">
+                    {contacts}
+                    </div>
+                    <ContactForm/>
+                </div>
+            );
+        }
         return (
             <div>
                 <div className="container">
                 {contacts}
                 </div>
-                <ContactForm/>
             </div>
         );
     }
@@ -26,7 +35,8 @@ class ContactsContainer extends Component {
 const mapStateToProps = state => {
     
     return {
-        contacts: state.contacts
+        contacts: state.contacts,
+        loginStatus: state.loginStatus
       }
 }
 export default connect(mapStateToProps)(ContactsContainer);
