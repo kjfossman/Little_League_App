@@ -3,6 +3,11 @@
   --Oakland: rgb(34, 139, 43);
   --SanText: black;
   --OaklandText: white; 
+  --New: rgb(255,255,255);
+  --Boston: rgb(255,0,0);
+  --BostonText: navy;
+  --NewText: navy;
+
 }
 
 .flip-card {
