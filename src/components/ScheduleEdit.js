@@ -56,7 +56,7 @@ class ScheduleEdit extends Component {
     render() {
        
         const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
-
+        if(this.props.loginStatus){
         return (
             <div className='edit'>
                 {"Update Game"}
@@ -84,6 +84,7 @@ class ScheduleEdit extends Component {
                 </form>
             </div>
         );
+        }
     }
 }
 
@@ -100,7 +101,8 @@ const mapStateToProps = state => {
     
     return {
         games: state.games, 
-        teams: state.teams
+        teams: state.teams,
+        loginStatus: state.loginStatus
       }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ScheduleEdit);

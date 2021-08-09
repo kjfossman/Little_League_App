@@ -23,14 +23,20 @@ class AnnouncementsContainer extends Component {
     render() {
         console.log(this.state.object)
         let announcements = this.props.announcements.map(a => <Announcement  onClick={this.test} key={a.id} id={a.id} announcement={a} />)
-        
-        return (
-            <div>
+        if(this.props.loginStatus){
+            return(
+                <div>
                 {announcements}
                 <div>
                     {this.state.active ? <AnnouncementEdit announcement={this.state.object}/> : <AnnouncementForm />}
                 </div>
             
+            </div>
+            )
+        }
+        return (
+            <div>
+                {announcements}
             </div>
         );
     }
@@ -39,7 +45,11 @@ class AnnouncementsContainer extends Component {
 const mapStateToProps = state => {
     
     return {
-        announcements: state.announcements
+        announcements: state.announcements,
+        loginStatus: state.loginStatus
       }
 }
 export default connect(mapStateToProps)(AnnouncementsContainer);
+
+
+  
