@@ -25,16 +25,16 @@ export const addPlayer = (formData) => {
            
         },
         body: JSON.stringify({
-            
                name: formData.name, 
                age: parseInt(formData.age),
-               team_id: parseInt(formData.team)
+               team_id: parseInt(formData.team),
+               image: formData.image
             
         })
     })
     .then(result => result.json())
     .then(responseJSON => {
-     
+     debugger
            dispatch({type: 'ADD_PLAYER', player: responseJSON})
         //    dispatch({type: 'ADD_PLAYER_TO_TEAM', player: responseJSON})
        

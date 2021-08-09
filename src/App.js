@@ -85,7 +85,7 @@ class App extends Component {
       </Router>
     )
     
-    else if (this.state.isLoggedIn || this.state.active)
+    else if (this.state.isLoggedIn || !this.state.active)
     return (
       <Router>
       <div className="App">

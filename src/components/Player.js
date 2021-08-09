@@ -19,7 +19,7 @@ class Player extends Component {
             <div className="flip-card">
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
-                        <img className='playerimg' src="https://a.espncdn.com/photo/2017/0817/Jedd_Gyorko1.png" alt="picture"></img>
+                        <img className='playerimg' src={this.props.player.image} alt="no picture available"></img>
                     </div>
                     <div className="flip-card-back" style={{backgroundColor: `var(--${this.props.team.name.split(' ')[0]}`, color: `var(--${this.props.team.name.split(' ')[0]}`+"Text"}} >
                         <h1>{this.props.player.name}</h1>

@@ -8,7 +8,8 @@ class PlayerForm extends Component {
     state = {
         name: '',
         age: '',
-        team: ''
+        team: '',
+        image: ''
     }
 
    
@@ -42,7 +43,11 @@ class PlayerForm extends Component {
                     </div>
               
                     <label htmlFor='age'>Age:</label>
-                    <input onChange={this.handleChange} type="number" min="7" max="14" name='age' id='age'></input><br></br>  
+                    <input onChange={this.handleChange} type="number" min="7" max="14" name='age' id='age'></input><br></br>
+
+                    <label htmlFor='image'>Image:</label>
+                    <input onChange={this.handleChange} type="text" name='image' id='image'></input><br></br>  
+                    
                     <label htmlFor='team'>Team:</label>
                     <select onChange={this.handleChange} name='team' id='team'>
                         <option key="default">Please Select Team</option>

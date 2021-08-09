@@ -9,7 +9,7 @@ const loginReducer = (state = [], action) => {
             return action.logged_in
 
         case 'LOGOUT':
-            debugger
+            
             if(action.logged_out === true){
                 return false
             }
