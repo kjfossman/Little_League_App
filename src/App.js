@@ -101,7 +101,8 @@ class App extends Component {
             <Route path="/players" component={PlayersContainer}/>
             <Route exact path="/directory" 
               render={(routeInfo) => (
-              <Directory onClick={this.change} routeinfo={routeInfo} login={this.login}/>
+              <Directory onClick={this.change} routeInfo={routeInfo} login={this.login} handleLogin={this.handleLogin} fetchloginStatus={this.props.fetchloginStatus}/>
+             
               )}/>
       </div>
       </Router>

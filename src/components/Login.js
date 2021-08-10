@@ -45,7 +45,8 @@ constructor(props){
         };
 
     redirect = () => {
-        this.props.info.history.push('/home')
+        debugger
+        this.props.routeInfo.history.push('/home')
     }
 
     handleErrors = () => {

@@ -11,6 +11,7 @@ class Directory extends Component {
   
 
     render() {
+        
         if(this.props.loginStatus){
             return (
                 <div>
@@ -20,7 +21,7 @@ class Directory extends Component {
         }
         return (
             <div className="Login">
-                <Login/>
+                <Login routeInfo={this.props.routeInfo} handleLogin={this.props.handleLogin} fetchloginStatus={this.props.fetchloginStatus}/>
             
             </div>
         );
