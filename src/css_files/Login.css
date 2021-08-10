@@ -1,0 +1,13 @@
+.Login {
+    border: solid;
+    padding: 5px;
+    width: 500px;
+    position: static;
+    margin: auto;
+    background-color: navy;
+}
+
+.form-fields {
+    color: white;
+    padding: 5px;
+}

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logout } from '../actions/loginStatusActions';
+import Login from './Login';
+import '../css_files/Login.css';
 
 
 class Directory extends Component {
@@ -9,29 +11,17 @@ class Directory extends Component {
   
 
     render() {
-   
-        return (
-            <div>
-            <div onClick={this.props.onClick}>
-            <NavLink 
-                    to="/home" exact
-                      >
-                
-                <button>Continue As Guest</button>
-                </NavLink>
-            </div>
-
-            <div >
-            <NavLink 
-                    to="/login" exact
-                      >
-                
-                <button onClick={this.props.login}>Continue As Admin</button>
-                </NavLink>
-            </div>
-            <div>
+        if(this.props.loginStatus){
+            return (
+                <div>
                 <button onClick={() => this.props.clearSession()}>Logout</button>
-            </div>
+                </div>
+            )
+        }
+        return (
+            <div className="Login">
+                <Login/>
+            
             </div>
         );
     }
@@ -43,6 +33,31 @@ const mapDispatchToProps = dispatch => {
     }
   }
 
+  const mapStateToProps = state => {
+    
+    return {
+        loginStatus: state.loginStatus
+      }
+}
 
 
-export default connect(null, mapDispatchToProps)(Directory);
+export default connect(mapStateToProps, mapDispatchToProps)(Directory);
+
+
+     {/* <div onClick={this.props.onClick}>
+            <NavLink 
+                    to="/home" exact
+                      >
+                
+                <button>Continue As Guest</button>
+                </NavLink>
+            </div> */}
+
+            {/* <div >
+            <NavLink 
+                    to="/login" exact
+                      >
+                
+                <button onClick={this.props.login}>Continue As Admin</button>
+                </NavLink>
+            </div> */}

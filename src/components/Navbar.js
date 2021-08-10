@@ -54,6 +54,13 @@ class Navbar extends Component {
                     }}
                     ><b>CONTACT</b>
                 </NavLink></button> 
+                <button><NavLink 
+                    to="/directory" exact
+                    activeStyle={{
+                        color: 'red'
+                    }}
+                    ><b>ADMIN</b>
+                </NavLink></button> 
                 
                          
             </div>

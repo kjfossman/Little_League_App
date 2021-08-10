@@ -99,6 +99,10 @@ class App extends Component {
             <Route path="/player" component={(routeInfo) => {
               return <PlayerForm goBack={() => routeInfo.history.push("/players")} />}}/>
             <Route path="/players" component={PlayersContainer}/>
+            <Route exact path="/directory" 
+              render={(routeInfo) => (
+              <Directory onClick={this.change} routeinfo={routeInfo} login={this.login}/>
+              )}/>
       </div>
       </Router>
     )
