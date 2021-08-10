@@ -24,6 +24,7 @@ class Announcement extends Component {
     })
 
     render() {
+        console.log(this.props.loginStatus)
         return (
             <div onClick={this.props.onClick} id={this.props.announcement.id} key={this.props.announcement.id} className="box">
                 <div>
@@ -37,7 +38,8 @@ class Announcement extends Component {
                 <div className="textbox">
                 <em>{this.props.announcement.content}</em>
                 <div className="remove">
-                <button onClick={this.handleClickButton}>REMOVE ANNOUNCMENT</button>
+                    {this.props.loginStatus && 
+                <button onClick={this.handleClickButton}>REMOVE ANNOUNCMENT</button>}
                 </div>
                 </div>
             </div>
@@ -53,4 +55,11 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Announcement);
+const mapStateToProps = state => {
+    
+    return {
+        loginStatus: state.loginStatus
+      }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Announcement);

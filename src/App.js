@@ -74,18 +74,8 @@ class App extends Component {
 
   render() {
     console.log(this.props.loginStatus)
-    if (this.state.admin && !this.state.isLoggedIn)
-    return (
-      <Router>
-        <div>
-          <Route exact path="/login" 
-          render={(props) => (
-            <Login info={props} handleLogin={this.handleLogin} fetchloginStatus={this.props.fetchloginStatus}/>)}/>
-        </div>
-      </Router>
-    )
     
-    else if (this.state.isLoggedIn || !this.state.active)
+  
     return (
       <Router>
       <div className="App">
@@ -106,17 +96,8 @@ class App extends Component {
               )}/>
       </div>
       </Router>
-    )
-    else if (!this.state.active)
-    return (
-      <Router>
-        <div>
-          <Route exact path="/directory" 
-           render={(routeInfo) => (
-          <Directory onClick={this.change} routeinfo={routeInfo} login={this.login}/>
-          )}/>
-        </div>
-      </Router>
+    
+   
     )
   }
 }
