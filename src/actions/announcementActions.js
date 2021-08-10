@@ -59,3 +59,23 @@ export const addAnnouncement = (formData) => {
    }
 }
 
+export const deleteAnnouncement = (id) => {
+     debugger
+    return (dispatch) => {
+        
+    fetch('http://localhost:3000/announcements/' + id, {
+        method: "DELETE",
+        // headers: {
+        //    "Content-Type": "application/json",
+           
+        // },
+    })
+    // .then(result => result.json())
+    .then(responseJSON => {
+           
+           dispatch({type: 'DELETE_ANNOUNCEMENT', announcement: id})
+       
+
+    })
+   }
+}

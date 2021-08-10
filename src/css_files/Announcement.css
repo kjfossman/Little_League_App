@@ -44,3 +44,10 @@
     background-color: navy;
     color: white;
 }
+
+.remove {
+    color: red;
+    position: relative;
+    bottom: 57px;
+    left: 300px
+}

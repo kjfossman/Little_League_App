@@ -14,11 +14,12 @@ const announcementReducer = (state = [], action) => {
             const index = state.findIndex(a => a.id === action.announcement.id)
             
             return  [action.announcement, ...state.slice(0, index), ...state.slice(index+1)]
-            // [...state.slice(0, index), 
-            //         {
-            //             ...action.announcement
-            //         },
-            //         ...state.slice(index + 1)]
+           
+        case 'DELETE_ANNOUNCEMENT':
+            debugger
+            const index2 = state.findIndex(a => a.id === action.announcement)
+            state.splice(index2, 1)
+            return [...state]
                
    
       default:
