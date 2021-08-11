@@ -45,7 +45,9 @@ class Announcement extends Component {
                 <em>{this.props.announcement.content}</em>
                 
                 </div>
+                
             </div>
+            
         );
     }
 }

@@ -70,9 +70,9 @@ class ScheduleInput extends Component {
                     <label htmlFor='date'>Date:</label>
                     <input onChange={this.handleDateChange} type="datetime-local" name='date' id='date'></input><br></br>  
                     <label htmlFor='away_team_score'>Away Team Score:</label>
-                    <input onChange={this.handleAwayTeamScoreChange} type="number" min="1" max="50" name='away_team_score' id='away_team_score'></input><br></br>
+                    <input onChange={this.handleAwayTeamScoreChange} type="number" min="0" max="50" name='away_team_score' id='away_team_score'></input><br></br>
                     <label htmlFor='home_team_score'>Home Team Score:</label>
-                    <input onChange={this.handleHomeTeamScoreChange} type="number" min="1" max="50" name='home_team_score' id='home_team_score'></input><br></br>
+                    <input onChange={this.handleHomeTeamScoreChange} type="number" min="0" max="50" name='home_team_score' id='home_team_score'></input><br></br>
                     <input className='submit' type="submit" value="Add Game"></input>
                 </form>
             </div>

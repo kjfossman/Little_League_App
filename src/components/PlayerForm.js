@@ -33,7 +33,7 @@ class PlayerForm extends Component {
     
         
         const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
-
+        if(this.props.loginStatus){
         return (
             <div className="player-form">
                 
@@ -59,7 +59,7 @@ class PlayerForm extends Component {
                 </form>
                 <PlayerList/>
             </div>
-        );
+        );}
     }
 }
 
@@ -74,7 +74,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
     
     return {
-        teams: state.teams
+        teams: state.teams,
+        loginStatus: state.loginStatus
       }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerForm);

@@ -67,3 +67,23 @@
 .block-remove{
     display: inline-flex;
 }
+
+.quote {
+    position: absolute;
+    right: 400px;
+    top: 150px
+    
+}
+
+.quote2 {
+    position: absolute;
+    right: 50px;
+    top: 150px;
+}
+.quote3 {
+    position: absolute;
+    right: 620px;
+    top: 400px;
+    width: 50px;
+    height: 50px;  
+}

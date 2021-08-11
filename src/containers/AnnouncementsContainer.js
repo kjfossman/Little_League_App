@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Announcement from '../components/Announcement.js'
 import AnnouncementEdit from '../components/AnnouncementEdit.js';
 import AnnouncementForm from '../components/AnnouncementForm.js';
+import '../css_files/Announcement.css';
+
 
 class AnnouncementsContainer extends Component {
 
@@ -46,6 +48,15 @@ class AnnouncementsContainer extends Component {
         return (
             <div>
                 {announcements}
+                <div className="quote">
+                    <img src="https://i.pinimg.com/564x/47/63/a0/4763a07b912c7208a1769b68beccbe68.jpg"></img>
+                </div>
+                <div className="quote2">
+                <img src="https://jokermag.com/wp-content/uploads/2021/02/Andrew-Benintendi-Inspiring-Baseball-Quote.png" width='300' height='300'></img>
+                </div>
+                <div className="quote3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd0w3QkT3JtcCtwDzrt2d89AOJLxoA0xoQFA&usqp=CAU"></img>
+                </div>
             </div>
         );
     }
