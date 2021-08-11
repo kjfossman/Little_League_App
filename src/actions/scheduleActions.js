@@ -75,4 +75,25 @@
    }
 }
 
+export const deleteGame = (id) => {
+     
+    return (dispatch) => {
+        
+    fetch('http://localhost:3000/games/' + id, {
+        method: "DELETE",
+        // headers: {
+        //    "Content-Type": "application/json",
+           
+        // },
+    })
+    // .then(result => result.json())
+    .then(responseJSON => {
+           
+           dispatch({type: 'DELETE_GAME', game: id})
+       
+
+    })
+   }
+}
+
 // dispatch({type: 'ADD_GAMES', games: responseJSON})

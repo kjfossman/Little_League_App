@@ -21,7 +21,11 @@ const scheduleReducer = (state = [], action) => {
                         ...action.game
                     },
                     ...state.slice(index + 1)]
-           
+        
+        case 'DELETE_GAME':
+            const index2 = state.findIndex(c => c.id === action.game)
+            state.splice(index2, 1)
+            return [...state]
 
       default:
         return state

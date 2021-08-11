@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateGame } from '../actions/scheduleActions';
+import { deleteGame } from '../actions/scheduleActions';
 import '../css_files/ScheduleEdit.css';
 import Moment from 'moment';
 
@@ -53,6 +54,11 @@ class ScheduleEdit extends Component {
         })
     }
 
+    handleClick = () => {
+    
+        this.props.removeGame(this.props.game.id)
+    }
+
     render() {
        
         const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
@@ -77,11 +83,14 @@ class ScheduleEdit extends Component {
                     <label htmlFor='date'>Date:</label>
                     <input onChange={this.handleDateChange} type="datetime-local" name='date' id='date' value={this.state.date}></input><br></br>  
                     <label htmlFor='away_team_score'>Away Team Score:</label>
-                    <input onChange={this.handleAwayTeamScoreChange} type="number" min="1" max="50" name='away_team_score' id='away_team_score' value={this.state.away_team_score}></input><br></br>
+                    <input onChange={this.handleAwayTeamScoreChange} type="number" min="0" max="50" name='away_team_score' id='away_team_score' value={this.state.away_team_score}></input><br></br>
                     <label htmlFor='home_team_score'>Home Team Score:</label>
-                    <input onChange={this.handleHomeTeamScoreChange} type="number" min="1" max="50" name='home_team_score' id='home_team_score' value={this.state.home_team_score}></input><br></br>
+                    <input onChange={this.handleHomeTeamScoreChange} type="number" min="0" max="50" name='home_team_score' id='home_team_score' value={this.state.home_team_score}></input><br></br>
                     <input className='submit' type="submit" value="Update Game"></input>
                 </form>
+                <div className='click'>
+                <button onClick={this.handleClick}>Delete Game</button>
+                </div>
             </div>
         );
         }
@@ -93,6 +102,9 @@ const mapDispatchToProps = dispatch => {
     return {
         editGame: (formData) => {
             dispatch(updateGame(formData))
+        },
+        removeGame: (formData) => {
+            dispatch(deleteGame(formData))
         }
     }
 }
