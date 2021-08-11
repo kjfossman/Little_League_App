@@ -27,9 +27,15 @@ class Announcement extends Component {
         console.log(this.props.loginStatus)
         return (
             <div onClick={this.props.onClick} id={this.props.announcement.id} key={this.props.announcement.id} className="box">
+                <div className="block-remove">
                 <div>
                 {"DATE: "}
                 {Moment(this.props.announcement.updated_at).format('MMMM DD,  LT')}
+                </div>
+                <div className="remove">
+                    {this.props.loginStatus && 
+                <button onClick={this.handleClickButton}>REMOVE ANNOUNCMENT</button>}
+                </div>
                 </div>
                 <div>
                 <u><strong>{"SUBJECT: "}{this.props.announcement.subject}</strong></u>
@@ -37,10 +43,7 @@ class Announcement extends Component {
                 </div>
                 <div className="textbox">
                 <em>{this.props.announcement.content}</em>
-                <div className="remove">
-                    {this.props.loginStatus && 
-                <button onClick={this.handleClickButton}>REMOVE ANNOUNCMENT</button>}
-                </div>
+                
                 </div>
             </div>
         );

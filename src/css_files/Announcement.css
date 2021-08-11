@@ -1,4 +1,5 @@
 .box {
+    
     background-color: white;
     margin-left: 150px;
     width: 500px;
@@ -46,8 +47,23 @@
 }
 
 .remove {
+    /* display: inline-flex; */
     color: red;
     position: relative;
-    bottom: 57px;
-    left: 300px
+    left: 120px;
+    bottom: 5px;
+    /* bottom: 57px;
+    /* left: 300px  */
+}
+
+.remove button{
+    height: 20px;
+}
+
+.remove button:hover{
+    background-color: red;
+}
+
+.block-remove{
+    display: inline-flex;
 }
