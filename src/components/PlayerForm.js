@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addPlayer } from '../actions/playerActions.js';
 import '../css_files/Player.css';
+import PlayerList from './PlayerList.js';
 
 class PlayerForm extends Component {
 
@@ -56,6 +57,7 @@ class PlayerForm extends Component {
                     
                     <input className='submit' type="submit" value="Add Player"></input>
                 </form>
+                <PlayerList/>
             </div>
         );
     }

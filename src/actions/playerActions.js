@@ -34,9 +34,30 @@ export const addPlayer = (formData) => {
     })
     .then(result => result.json())
     .then(responseJSON => {
-     debugger
+     
            dispatch({type: 'ADD_PLAYER', player: responseJSON})
         //    dispatch({type: 'ADD_PLAYER_TO_TEAM', player: responseJSON})
+       
+
+    })
+   }
+}
+
+export const deletePlayer = (id) => {
+     
+    return (dispatch) => {
+        
+    fetch('http://localhost:3000/players/' + id, {
+        method: "DELETE",
+        // headers: {
+        //    "Content-Type": "application/json",
+           
+        // },
+    })
+    // .then(result => result.json())
+    .then(responseJSON => {
+           
+           dispatch({type: 'DELETE_PLAYER', player: id})
        
 
     })

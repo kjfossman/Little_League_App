@@ -9,7 +9,11 @@ const playerReducer = (state = [], action) => {
 
         case 'ADD_PLAYER':
             return [...state, action.player]
-               
+            
+        case 'DELETE_PLAYER':
+            const index = state.findIndex(p => p.id === action.player)
+            state.splice(index, 1)
+            return [...state]
    
       default:
         return state;

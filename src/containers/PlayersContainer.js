@@ -34,5 +34,6 @@ const mapStateToProps = state => {
         players: state.players
       }
 }
+
 export default connect(mapStateToProps)(PlayersContainer);
 
