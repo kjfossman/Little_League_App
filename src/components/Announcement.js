@@ -18,13 +18,13 @@ class Announcement extends Component {
         }))
     }
 
-    handleClickButton = (e_ => {
-        console.log("delete ann")
-        this.props.removeAnnouncement(this.props.announcement.id)
+    handleClickButton = (e => {
+        this.props.removeAnnouncement(this.props.announcement.id),
+        this.props.reset(e)
     })
 
     render() {
-        console.log(this.props.loginStatus)
+        
         return (
             <div onClick={this.props.onClick} id={this.props.announcement.id} key={this.props.announcement.id} className="box">
                 <div className="block-remove">
