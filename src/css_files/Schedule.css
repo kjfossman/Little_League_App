@@ -69,5 +69,16 @@
     padding-top: 4px;
 }
 
+.form-input{
+    height: 100px;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 100px;
+}
+
+.filter{
+    background-color: navy;
+    color: white;
+}
 
 

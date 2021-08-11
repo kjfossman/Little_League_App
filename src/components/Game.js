@@ -24,6 +24,7 @@ class Game extends Component {
     }
 
     render() {
+        
        if(this.props.loginStatus){
         return (
             <div>
