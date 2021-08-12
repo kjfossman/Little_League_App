@@ -86,7 +86,7 @@ constructor(props){
                     </div>
                     <input className='submit' type="submit" value="Login"></input>
                 </form>
-                <div>
+                <div className='err'>
                     {this.state.errors}
                 </div>
             </div>
