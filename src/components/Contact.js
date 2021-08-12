@@ -35,7 +35,6 @@ class Contact extends Component {
                 <a href={`mailto:${this.props.email}`}>email</a><br></br>
                 {/* <button onClick={this.handleClick}>REMOVE CONTACT</button> */}
                 </div>
-                
             </div>
         );
     }

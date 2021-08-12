@@ -27,6 +27,9 @@ class ContactsContainer extends Component {
                 <div className="container">
                 {contacts}
                 </div>
+                <div className="batter">
+                <img src="https://www.buildingromeseries.com/wp-content/uploads/2020/12/inside_pitch-249x300.jpg"></img>
+                </div>
             </div>
         );
     }

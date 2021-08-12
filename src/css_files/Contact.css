@@ -40,3 +40,9 @@
     float: right;
     padding: 1px;
 }
+
+.batter{
+    position: absolute;
+    left: 80px; 
+    top: 160px
+}
