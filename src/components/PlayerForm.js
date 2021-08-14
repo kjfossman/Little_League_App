@@ -30,7 +30,7 @@ class PlayerForm extends Component {
     }
 
     render() {
-    
+        console.log(this.state)
         
         const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
         if(this.props.loginStatus){

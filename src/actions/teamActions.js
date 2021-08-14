@@ -6,7 +6,7 @@ export const fetchTeams = () => {
         dispatch({ type: 'LOADING_TEAMS'})
         console.log('loading')
 
-        fetch(heroku + "teams", {withCredentials: true}).then(response =>
+        fetch(url + "teams", {withCredentials: true}).then(response =>
     {
         return response.json()
     }).then(responseJSON => {

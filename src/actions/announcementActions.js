@@ -5,7 +5,7 @@ export const fetchAnnouncements = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_ANNOUNCEMENTS'})
 
-        fetch(heroku + "announcements").then(response =>
+        fetch(url + "announcements").then(response =>
     {
         return response.json()
     }).then(responseJSON => {
