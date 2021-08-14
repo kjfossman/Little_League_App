@@ -1,9 +1,12 @@
+import {url} from '../Url.js'; 
+import { heroku } from '../Url.js';
+
 export const fetchTeams = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_TEAMS'})
         console.log('loading')
 
-        fetch("http://localhost:3000/teams").then(response =>
+        fetch(heroku + "teams").then(response =>
     {
         return response.json()
     }).then(responseJSON => {

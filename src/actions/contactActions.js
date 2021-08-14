@@ -1,3 +1,5 @@
+import {url} from '../Url.js';
+
 export const fetchContacts = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_CONTACTS'})

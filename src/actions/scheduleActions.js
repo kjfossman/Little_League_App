@@ -1,4 +1,6 @@
-    export const fetchGames = () => {
+import {url} from '../Url.js';
+
+export const fetchGames = () => {
         return (dispatch) => {
             dispatch({ type: 'LOADING_GAMES'})
 

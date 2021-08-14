@@ -1,3 +1,5 @@
+import {url} from '../Url.js';
+
 export const fetchPlayers = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_PLAYERS'})

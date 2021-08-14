@@ -1,8 +1,11 @@
+import {url} from '../Url.js';
+import { heroku } from '../Url.js';
+
 export const fetchAnnouncements = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_ANNOUNCEMENTS'})
 
-        fetch("http://localhost:3000/announcements").then(response =>
+        fetch(heroku + "announcements").then(response =>
     {
         return response.json()
     }).then(responseJSON => {

@@ -36,7 +36,7 @@ class App extends Component {
     this.props.fetchContacts()
     this.props.fetchloginStatus()
   }
-  
+
 
   state = {
     active: false,
@@ -73,6 +73,7 @@ class App extends Component {
   }
 
   render() {
+    
     console.log(this.props.loginStatus)
     
   
