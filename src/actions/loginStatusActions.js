@@ -28,9 +28,9 @@ import axios from "axios";
       return (dispatch) => {
         
       
-          axios.post('http://localhost:3000/logout', {},
+          axios.post(heroku + 'logout', {},
     
-          {withCredentials: true, origin: 'http://localhost:3001'})
+          {withCredentials: true, origin: 'https://little-league1.herokuapp.com'})
           
           .then(response => {
               debugger
