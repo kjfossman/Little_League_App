@@ -5,7 +5,7 @@ export const fetchPlayers = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_PLAYERS'})
 
-        fetch("http://localhost:3000/players").then(response =>
+        fetch(heroku + "players", {withCredentials: true}).then(response =>
     {
         return response.json()
     }).then(responseJSON => {
@@ -21,7 +21,7 @@ export const addPlayer = (formData) => {
     
     return (dispatch) => {
        
-    fetch("http://localhost:3000/players",{
+    fetch(heroku + "players", {withCredentials: true},{
         method: "POST",
         headers: {
            "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export const deletePlayer = (id) => {
      
     return (dispatch) => {
         
-    fetch('http://localhost:3000/players/' + id, {
+    fetch(heroku + 'players/' + id, {withCredentials: true}, {
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",

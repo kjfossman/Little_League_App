@@ -30,7 +30,7 @@ constructor(props){
     )
        
             .then(response => {
-                
+            
             if (response.data.logged_in) {
                 this.props.handleLogin(response.data)
                 this.props.fetchloginStatus()
