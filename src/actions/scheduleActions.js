@@ -1,10 +1,11 @@
 import {url} from '../Url.js';
+import { heroku } from '../Url.js';
 
 export const fetchGames = () => {
         return (dispatch) => {
             dispatch({ type: 'LOADING_GAMES'})
 
-            fetch("http://localhost:3000/games").then(response =>
+            fetch(heroku + "games", {withCredentials: true}).then(response =>
         {
             return response.json()
         }).then(responseJSON => {
@@ -18,7 +19,7 @@ export const fetchGames = () => {
  export const addGame = (formData) => {
      
      return (dispatch) => {
-     fetch("http://localhost:3000/games",{
+     fetch(heroku + "games", {withCredentials: true},{
          method: "POST",
          headers: {
             "Content-Type": "application/json",
@@ -50,7 +51,7 @@ export const fetchGames = () => {
  export const updateGame = (formData) => {
      
     return (dispatch) => {
-    fetch(`http://localhost:3000/games/${formData.game_id}`,{
+    fetch(heroku + `games/${formData.game_id}`,{withCredentials: true},{
         method: "PATCH",
         headers: {
            "Content-Type": "application/json",
@@ -81,7 +82,7 @@ export const deleteGame = (id) => {
      
     return (dispatch) => {
         
-    fetch('http://localhost:3000/games/' + id, {
+    fetch(heroku + 'games/' + id, {withCredentials: true}, {
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",
