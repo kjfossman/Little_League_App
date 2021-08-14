@@ -6,8 +6,7 @@ export const fetchTeams = () => {
         dispatch({ type: 'LOADING_TEAMS'})
         console.log('loading')
 
-        fetch(heroku + "teams", {mode: 'cors',
-        headers: { 'Access-Control-Allow-Origin':'*'}}).then(response =>
+        fetch(heroku + "teams", {withCredentials: true}).then(response =>
     {
         return response.json()
     }).then(responseJSON => {
