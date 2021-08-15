@@ -5,7 +5,7 @@ export const fetchAnnouncements = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_ANNOUNCEMENTS'})
 
-        fetch(heroku + "announcements").then(response =>
+        fetch(url + "announcements").then(response =>
     {
         return response.json()
     }).then(responseJSON => {
@@ -17,7 +17,7 @@ export const fetchAnnouncements = () => {
 
 export const addAnnouncement = (formData) => {
     return (dispatch) => {
-    fetch(heroku + "announcements", {withCredentials: true},{
+    fetch(url + "announcements", {withCredentials: true},{
         method: "POST",
         headers: {
            "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const addAnnouncement = (formData) => {
     
  export const updateAnnouncement = (formData) => {
     return (dispatch) => {
-    fetch(heroku + `announcements/${formData.id}`, {withCredentials: true},{
+    fetch(url + `announcements/${formData.id}`, {withCredentials: true},{
         method: "PATCH",
         headers: {
            "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export const deleteAnnouncement = (id) => {
      
     return (dispatch) => {
         
-    fetch(heroku + 'announcements/' + id, {withCredentials: true}, {
+    fetch(url + 'announcements/' + id, {withCredentials: true}, {
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",
