@@ -1,5 +1,5 @@
 import {url} from '../Url.js';
-import { heroku } from '../Url.js';
+
 
 
 import axios from "axios";
@@ -7,7 +7,7 @@ import axios from "axios";
   export const fetchloginStatus = () => {
       
       return (dispatch) => {
-    axios.get(heroku + 'logged_in', 
+    axios.get(url + 'logged_in', 
    {withCredentials: true})    
     .then(response => {
       
@@ -28,9 +28,9 @@ import axios from "axios";
       return (dispatch) => {
         
       
-          axios.post(heroku + 'logout', {},
+          axios.post(url + 'logout', {},
     
-          {withCredentials: true, origin: 'https://little-league1.herokuapp.com'})
+          {withCredentials: true})
           
           .then(response => {
               debugger
