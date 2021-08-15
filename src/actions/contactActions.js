@@ -5,7 +5,7 @@ export const fetchContacts = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_CONTACTS'})
 
-        fetch(heroku + "contacts").then(response =>
+        fetch(url + "contacts").then(response =>
     {
         return response.json()
     }).then(responseJSON => {
@@ -18,7 +18,7 @@ export const fetchContacts = () => {
 export const addContact = (formData) => {
      
     return (dispatch) => {
-    fetch(heroku + "contacts", {withCredentials: true},{
+    fetch(url + "contacts", {withCredentials: true},{
         method: "POST",
         headers: {
            "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const deleteContact = (id) => {
      
     return (dispatch) => {
         
-    fetch(heroku + 'contacts/' + id, {withCredentials: true}, {
+    fetch(url + 'contacts/' + id, {withCredentials: true}, {
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",
