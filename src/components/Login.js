@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../css_files/Login.css';
-import { heroku } from '../Url';
+import { url } from '../Url';
 class Login extends Component {
 
 constructor(props){
@@ -24,8 +24,8 @@ constructor(props){
         }
         
 
-        axios.post(heroku + 'login', {user}, {
-            withCredentials: true, origin: 'https://little-league1.herokuapp.com'}
+        axios.post(url + 'login', {user}, {
+            withCredentials: true}
             // headers: {'Access-Control-Allow-Origin': 'http://localhost:3001', 'Content-Type': 'application/json'
     )
        
