@@ -16,7 +16,7 @@ import loginReducer from './reducers/loginReducer';
 
 
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const rootReducer = combineReducers({
   games: scheduleReducer,
@@ -27,7 +27,8 @@ const rootReducer = combineReducers({
   loginStatus: loginReducer,
 })
 
-const store = createStore(rootReducer, compose(applyMiddleware(thunk), devTools))
+// const store = createStore(rootReducer, compose(applyMiddleware(thunk), devTools))
+const store = createStore(rootReducer, compose(applyMiddleware(thunk)))
 
 ReactDOM.render((
   <React.StrictMode>
