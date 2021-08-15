@@ -5,7 +5,7 @@ export const fetchPlayers = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_PLAYERS'})
 
-        fetch(url + "players", {withCredentials: true}).then(response =>
+        fetch(url + "players").then(response =>
     {
         return response.json()
     }).then(responseJSON => {
@@ -21,7 +21,7 @@ export const addPlayer = (formData) => {
     
     return (dispatch) => {
        
-    fetch(url + "players", {withCredentials: true},{
+    fetch(url + "players",{
         method: "POST",
         headers: {
            "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export const deletePlayer = (id) => {
      
     return (dispatch) => {
         
-    fetch(url + 'players/' + id, {withCredentials: true}, {
+    fetch(url + 'players/' + id,{
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",

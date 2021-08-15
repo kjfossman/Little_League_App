@@ -17,7 +17,7 @@ export const fetchAnnouncements = () => {
 
 export const addAnnouncement = (formData) => {
     return (dispatch) => {
-    fetch(url + "announcements", {withCredentials: true},{
+    fetch(url + "announcements", {
         method: "POST",
         headers: {
            "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const addAnnouncement = (formData) => {
     
  export const updateAnnouncement = (formData) => {
     return (dispatch) => {
-    fetch(url + `announcements/${formData.id}`, {withCredentials: true},{
+    fetch(url + `announcements/${formData.id}`, {
         method: "PATCH",
         headers: {
            "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export const deleteAnnouncement = (id) => {
      
     return (dispatch) => {
         
-    fetch(url + 'announcements/' + id, {withCredentials: true}, {
+    fetch(url + 'announcements/' + id, {
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",

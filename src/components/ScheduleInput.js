@@ -53,19 +53,21 @@ class ScheduleInput extends Component {
     render() {
         
         const teamInputs = this.props.teams.map((team, idx) => <option key={idx} value={team.id}>{team.name}</option>)
-
+        console.log(this.state)
         return (
             <div className='form'>
                 {"Makeup Game Form"}
                 <form onSubmit={this.handleOnSubmit}>
                     
                     <label htmlFor='away_team'>Away Team:</label>
-                    <select onChange={this.handleonAwayTeamChange} name='away_team' id='away_team'>
+                    <select onChange={this.handleonAwayTeamChange} name='away_team' id='away_team' >
                         {teamInputs}
+                        <option value='' selected></option>
                     </select><br></br>
                     <label htmlFor='home_team'>Home Team:</label>
                     <select onChange={this.handleonHomeTeamChange} name='home_team' id='home_team'>
                         {teamInputs} 
+                        <option value='' selected></option>
                     </select><br></br>
                     <label htmlFor='date'>Date:</label>
                     <input onChange={this.handleDateChange} type="datetime-local" name='date' id='date'></input><br></br>  

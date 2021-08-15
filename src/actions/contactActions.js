@@ -18,7 +18,7 @@ export const fetchContacts = () => {
 export const addContact = (formData) => {
      
     return (dispatch) => {
-    fetch(url + "contacts", {withCredentials: true},{
+    fetch(url + "contacts", {
         method: "POST",
         headers: {
            "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const deleteContact = (id) => {
      
     return (dispatch) => {
         
-    fetch(url + 'contacts/' + id, {withCredentials: true}, {
+    fetch(url + 'contacts/' + id, {
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",

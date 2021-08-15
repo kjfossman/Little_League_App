@@ -5,7 +5,7 @@ export const fetchGames = () => {
         return (dispatch) => {
             dispatch({ type: 'LOADING_GAMES'})
 
-            fetch(url + "games", {withCredentials: true}).then(response =>
+            fetch(url + "games").then(response =>
         {
             return response.json()
         }).then(responseJSON => {
@@ -17,9 +17,9 @@ export const fetchGames = () => {
 
 
  export const addGame = (formData) => {
-     
+     debugger
      return (dispatch) => {
-     fetch(url + "games", {withCredentials: true},{
+     fetch(url + "games", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export const fetchGames = () => {
  export const updateGame = (formData) => {
      
     return (dispatch) => {
-    fetch(url + `games/${formData.game_id}`,{withCredentials: true},{
+    fetch(url + `games/${formData.game_id}`,{
         method: "PATCH",
         headers: {
            "Content-Type": "application/json",
@@ -82,7 +82,7 @@ export const deleteGame = (id) => {
      
     return (dispatch) => {
         
-    fetch(url + 'games/' + id, {withCredentials: true}, {
+    fetch(url + 'games/' + id, {
         method: "DELETE",
         // headers: {
         //    "Content-Type": "application/json",
